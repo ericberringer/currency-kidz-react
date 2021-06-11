@@ -2,6 +2,7 @@ import React from "react"
 import { Route } from "react-router-dom"
 import { ProfileList } from "./profile/ProfileList"
 import { ProfileProvider } from "./auth/AuthProvider"
+import { DepositProvider } from "./deposits/DepositProvider"
 
 
 export const ApplicationViews = () => {
@@ -17,9 +18,13 @@ export const ApplicationViews = () => {
         {/* Profile Area */}
 
         <ProfileProvider>
-            <Route exact path="/">
-                <ProfileList />
-            </Route>
+            <DepositProvider>
+
+                <Route exact path="/">
+                    <ProfileList />
+                </Route>
+
+            </DepositProvider>
         </ProfileProvider>
 
         {/* Deposit Event Area */}
