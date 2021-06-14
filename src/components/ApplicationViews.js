@@ -38,11 +38,15 @@ export const ApplicationViews = () => {
             <DepositProvider>
                 <WithdrawalProvider>
 
-                <Route exact path="/events/edit/recent_activity">
+                <Route exact path="/recent_activity/edit_withdrawal/:eventId(\d+)">
                     <RecentActivityForm />
                 </Route>
 
-                <Route exact path="/events/recent_activity">
+                <Route exact path="/recent_activity/edit_deposit/:eventId(\d+)">
+                    <RecentActivityForm />
+                </Route>
+
+                <Route exact path="/recent_activity">
                     <RecentActivityList />
                 </Route>
 

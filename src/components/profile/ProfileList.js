@@ -35,6 +35,8 @@ export const ProfileList = () => {
         setAllWithdrawalEvents(allWithdrawals)
     }, [deposit_events, withdrawal_events])
 
+    const list = 1
+
 
     return (
         <div className="profileList">
@@ -68,7 +70,7 @@ export const ProfileList = () => {
                 }
             </div>
             <div>
-                <button className="editActivityButton" onClick={() => history.push(`/events/recent_activity`)}>All Activity</button>
+                <button className="activityButton" onClick={() => history.push(`/recent_activity`)}>All Activity</button>
             </div>
         </div>
     )

@@ -5,6 +5,8 @@ import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 
 
 export const RecentActivityForm = () => {
+
+
     return (
         <section>
             <form>
@@ -12,7 +14,13 @@ export const RecentActivityForm = () => {
                 <fieldset>
                     <label htmlFor="name">Name: </label>
                     <input type="text" id="name" required autoFocus
-                        placeholder="Deposit Name"
+                        placeholder="Transaction Name"
+                        ></input>
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="total">Amount: </label>
+                    <input type="text" id="total" required autoFocus
+                        placeholder="Total"
                         ></input>
                 </fieldset>
             </form>
