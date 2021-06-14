@@ -2,7 +2,6 @@ import { useHistory } from "react-router-dom"
 import { useEffect, useContext, useState } from "react"
 import { DepositEventContext } from "../deposits/DepositProvider"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
-import "./Profile.css"
 
 
 export const RecentActivityForm = () => {

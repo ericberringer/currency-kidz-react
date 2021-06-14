@@ -10,7 +10,7 @@ export const Withdrawal = ({withdrawal}) => {
     <section className="recentActivityCard">
         <h4>{withdrawal.name}</h4>
         <h4>{withdrawal.date}</h4>
-        <h4>{withdrawal.total}</h4>
+        <h4>${withdrawal.total}</h4>
     </section>
     </>
     )

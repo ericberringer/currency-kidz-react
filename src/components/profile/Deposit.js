@@ -11,7 +11,7 @@ export const Deposit = ({deposit}) => {
     <section className="recentActivityCard">
         <h4>{deposit.name}</h4>
         <h4>{deposit.date}</h4>
-        <h4>{deposit.total}</h4>
+        <h4>${deposit.total}</h4>
     </section>
     </>
         )
