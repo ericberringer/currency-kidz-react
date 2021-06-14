@@ -43,7 +43,11 @@
     width: 85%;
 }
 
-.recentDeposits {
+.recentActivityCard {
     display: flex;
     justify-content: space-between;
+}
+
+.editActivityButton {
+    margin: 0 0 40px 0;
 }
