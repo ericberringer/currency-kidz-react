@@ -2,30 +2,37 @@ import React, { useState, useContext, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import { ProfileContext } from "./ProfileProvider"
 import { Deposit } from "./Deposit"
-import Withdrawal from "./Withdrawal"
+import { Withdrawal } from "./Withdrawal"
 import PigPlus from "../profile/PigPlus.png"
 import PigMinus from "../profile/PigMinus.png"
 import Milo from "../profile/Milo.png"
 // import ""./Profile.css""
 import { DepositEventContext } from "../deposits/DepositProvider"
+import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 
 export const ProfileList = () => {
 
     const { getProfile, profile } = useContext(ProfileContext)
     const { getDeposits, deposit_events } = useContext(DepositEventContext)
+    const { getWithdrawals, withdrawal_events } = useContext(WithdrawalEventContext)
 
     const [ allDepositEvents, setAllDepositEvents ] = useState([])
-    console.log(allDepositEvents)
+    const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
+    // console.log(allDepositEvents)
 
     useEffect(() => {
         getProfile()
         .then(getDeposits)
+            .then(getWithdrawals)
     }, [])
 
     useEffect(() => {
         const allDeposits = deposit_events.filter(dep => dep.total > 0)
         setAllDepositEvents(allDeposits)
-    }, [])
+        const allWithdrawals = withdrawal_events.filter(dep => dep.total > 0)
+        setAllWithdrawalEvents(allWithdrawals)
+    }, [deposit_events, withdrawal_events])
+
 
     return (
         <div className="profileList">
@@ -50,11 +57,16 @@ export const ProfileList = () => {
             </div>
             <div className="recentDepositDiv recentTransactions">
                 {
-                    allDepositEvents.map(depositPost => <Deposit key={depositPost.id} deposit={depositPost} />)
+                    allDepositEvents?.map(depositPost => <Deposit key={depositPost.id} deposit={depositPost} />)
                 }
             </div>
             <div className="recentWithdrawalDiv recentTransactions">
-                <h4>Withdrawals go here</h4>
+                {
+                    allWithdrawalEvents?.map(withdrawalPost => <Withdrawal key={withdrawalPost.id} withdrawal={withdrawalPost} />)
+                }
+            </div>
+            <div>
+                <button className="editActivityButton">Edit Activity</button>
             </div>
         </div>
     )

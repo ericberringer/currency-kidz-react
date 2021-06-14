@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 import { ProfileList } from "./profile/ProfileList"
 import { ProfileProvider } from "./auth/AuthProvider"
 import { DepositProvider } from "./deposits/DepositProvider"
+import { WithdrawalProvider } from "./withdrawals/WithdrawalProvider"
 
 
 export const ApplicationViews = () => {
@@ -19,11 +20,13 @@ export const ApplicationViews = () => {
 
         <ProfileProvider>
             <DepositProvider>
+                <WithdrawalProvider>
 
                 <Route exact path="/">
                     <ProfileList />
                 </Route>
 
+                </WithdrawalProvider>
             </DepositProvider>
         </ProfileProvider>
 
