@@ -7,6 +7,7 @@ import { WithdrawalProvider } from "./withdrawals/WithdrawalProvider"
 import { EditDepositForm } from "./recentactivity/EditDepositForm"
 import { EditWithdrawalForm } from "./recentactivity/EditWithdrawalForm"
 import { RecentActivityList } from "./recentactivity/RecentActivityList"
+import { DepositList } from "./deposits/DepositList"
 
 
 export const ApplicationViews = () => {
@@ -49,6 +50,20 @@ export const ApplicationViews = () => {
 
                 <Route exact path="/recent_activity">
                     <RecentActivityList />
+                </Route>
+
+                </WithdrawalProvider>
+            </DepositProvider>
+        </ProfileProvider>
+
+        {/* Deposit Area */}
+
+        <ProfileProvider>
+            <DepositProvider>
+                <WithdrawalProvider>
+
+                <Route exact path="/create/deposit_event">
+                    <DepositList />
                 </Route>
 
                 </WithdrawalProvider>

@@ -16,6 +16,18 @@ export const DepositProvider = (props) =>{
           .then(setDeposits)
     }
 
+    const createDeposit = newDep => {
+        return fetch("http://localhost:8000/deposit_events", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Token ${localStorage.getItem("ck_user_id")}`
+            },
+            body: JSON.stringify(newDep)
+        })
+            .then(getDeposits)
+    }
+
     const updateDeposit = deposit => {
         return fetch(`http://localhost:8000/deposit_events/${deposit.id}`, {
             method: "PUT",
@@ -39,7 +51,7 @@ export const DepositProvider = (props) =>{
 
     return (
       <DepositEventContext.Provider value={{
-          deposit_events, getDeposits, updateDeposit, getDepositById
+          deposit_events, getDeposits, updateDeposit, getDepositById, createDeposit
       }}>
           {props.children}
       </DepositEventContext.Provider>
