@@ -4,6 +4,9 @@ import { ProfileList } from "./profile/ProfileList"
 import { ProfileProvider } from "./auth/AuthProvider"
 import { DepositProvider } from "./deposits/DepositProvider"
 import { WithdrawalProvider } from "./withdrawals/WithdrawalProvider"
+import { EditDepositForm } from "./recentactivity/EditDepositForm"
+import { EditWithdrawalForm } from "./recentactivity/EditWithdrawalForm"
+import { RecentActivityList } from "./recentactivity/RecentActivityList"
 
 
 export const ApplicationViews = () => {
@@ -30,8 +33,28 @@ export const ApplicationViews = () => {
             </DepositProvider>
         </ProfileProvider>
 
-        {/* Deposit Event Area */}
-        {/* Withdrawal Event Area */}
+        {/* Recent Activity Area */}
+
+        <ProfileProvider>
+            <DepositProvider>
+                <WithdrawalProvider>
+
+                <Route exact path="/recent_activity/edit_withdrawal/:withdrawalId(\d+)">
+                    <EditWithdrawalForm />
+                </Route>
+
+                <Route exact path="/recent_activity/edit_deposit/:depositId(\d+)">
+                    <EditDepositForm />
+                </Route>
+
+                <Route exact path="/recent_activity">
+                    <RecentActivityList />
+                </Route>
+
+                </WithdrawalProvider>
+            </DepositProvider>
+        </ProfileProvider>
+
         {/* Currency Area */}
         {/* Quiz Area */}
     </>
