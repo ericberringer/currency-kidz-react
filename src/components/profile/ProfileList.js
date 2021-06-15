@@ -20,7 +20,6 @@ export const ProfileList = () => {
     const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
 
     const history = useHistory()
-    // console.log(allDepositEvents)
 
     useEffect(() => {
         getProfile()
