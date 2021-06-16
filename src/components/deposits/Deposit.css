@@ -1,3 +1,26 @@
+.headerDiv {
+    margin: 0 0 20px 0;
+}
+
+.milo {
+    width: 30%;
+}
+
+.depositPiggy {
+    width: 50%;
+    margin: 35px 0;
+}
+
+.currentDepositDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.currentDeposit {
+    background-color: white;
+    padding: 0 10px;
+}
+
 .depositList {
     display: flex;
     align-items: center;
@@ -5,8 +28,16 @@
     text-align: center;
 }
 
-.carouselImg {
-    width: 65%;
+.coinImg {
+    width: 50%;
+}
+
+.billImg {
+    width: 75%;
+}
+
+.currencyImg {
+    margin: 15px 0 15px 0;
 }
 
 /* Coin Counters */
@@ -33,7 +64,7 @@ input::-webkit-inner-spin-button {
 .input-group {
   clear: both;
   margin: 15px 0;
-  position: relative;
+  /* position: relative; */
 }
 
 .input-group input[type='button'] {
@@ -49,7 +80,7 @@ input::-webkit-inner-spin-button {
   height: 38px;
   padding: 0;
   width: 38px;
-  position: relative;
+  /* position: relative; */
 }
 
 .input-group .quantity-field {
@@ -58,15 +89,15 @@ input::-webkit-inner-spin-button {
   left: -6px;
   text-align: center;
   width: 62px;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 13px;
   margin: 0 0 5px;
   resize: vertical;
 }
 
-.button-plus {
+/* .button-plus {
   left: -13px;
-}
+} */
 
 input[type="number"] {
   -moz-appearance: textfield;
@@ -96,6 +127,10 @@ input[type="number"] {
 
 /* Dollar Counter */
 
-.dollarContainer {
-    background-color: purple;
+
+
+
+.currencyContainer {
+    display: flex;
+    flex-direction: column;
 }

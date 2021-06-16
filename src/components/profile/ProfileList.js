@@ -64,7 +64,10 @@ export const ProfileList = () => {
             </div>
             <div className="recentDepositDiv recentTransactions">
                 {
-                    allDepositEvents?.map(depositPost => <Deposit key={depositPost.id} deposit={depositPost} />)
+                    allDepositEvents?.map(depositPost => {
+                        <Deposit key={depositPost.id} deposit={depositPost} />
+                    }) 
+                        
                 }
             </div>
             <div className="recentWithdrawalDiv recentTransactions">
