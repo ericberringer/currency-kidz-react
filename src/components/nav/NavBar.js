@@ -8,6 +8,7 @@ export const NavBar = (props) => {
 
     return (
         <ul className="navbar">
+            <button className="button" onClick={() => history.push("/")}>Home</button>
             <button className="navbar__item button"
                     onClick={() => {
                         localStorage.removeItem("ck_user_id")

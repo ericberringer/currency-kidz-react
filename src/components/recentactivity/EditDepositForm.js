@@ -4,14 +4,15 @@ import { DepositEventContext } from "../deposits/DepositProvider"
 
 export const EditDepositForm = () => {
 
-    const { updateDeposit, getDepositById } = useContext(DepositEventContext)
+    const { updateDeposit, getDepositById, createDeposit } = useContext(DepositEventContext)
 
     const history = useHistory()
     const { depositId } = useParams()
 
     const [ event, setEvent ] = useState({
         name: "",
-        total: 0
+        total: 0,
+        date: ""
     })
 
     const handleControlledInputChange = (transaction) => {
@@ -24,13 +25,23 @@ export const EditDepositForm = () => {
         if (event.name === "" && event.total === 0) {
             window.alert("Please complete all fields")
         } else {
-            updateDeposit({
-                id: depositId,
-                name: event.name,
-                date: event.date,
-                total: event.total
-            })
+            if (depositId) {
+                updateDeposit({
+                    id: depositId,
+                    name: event.name,
+                    date: event.date,
+                    total: event.total,
+                })
                 .then(() => history.push("/recent_activity"))
+            } else {
+                createDeposit({
+                    id: depositId,
+                    name: event.name,
+                    date: event.date,
+                    total: event.total,
+                })
+                .then(() => history.push("/"))
+            }
        }
     }
 
@@ -42,7 +53,7 @@ export const EditDepositForm = () => {
                     id: event.id,
                     name: event.name,
                     date: event.date,
-                    total: event.total
+                    total: event.total,
                 })
             })
         }
@@ -51,7 +62,7 @@ export const EditDepositForm = () => {
     return (
         <section>
             <form className="transactionForm">
-                <h2>Edit Recent Activity</h2>
+                <h2>{depositId ? "Edit Recent Activity" : "Make a Deposit"}</h2>
                 <div className="transactionFormDiv">
                 <fieldset>
                     <label htmlFor="name">Name: </label>

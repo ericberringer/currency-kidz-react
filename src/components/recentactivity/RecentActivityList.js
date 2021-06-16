@@ -18,7 +18,6 @@ export const RecentActivityList = () => {
     const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
 
     const history = useHistory()
-    console.log(withdrawal_events)
 
     useEffect(() => {
         getProfile()

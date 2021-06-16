@@ -34,7 +34,7 @@ export const ProfileList = () => {
         setAllWithdrawalEvents(allWithdrawals)
     }, [deposit_events, withdrawal_events])
 
-    const list = 1
+    // let audio = new Audio("")
 
 
     return (
@@ -45,7 +45,11 @@ export const ProfileList = () => {
             </div>
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
-                <img className="piggyBank image" alt="piggy bank deposit" src={PigPlus}></img>
+                <img className="piggyBank image" alt="piggy bank deposit" src={PigPlus}
+                    onClick={() =>
+                        history.push("/create/deposit_event")
+                        // audio.play()
+                }></img>
                 <h3>Start a New Deposit!!</h3>
                 <img className="piggyBank image withdrawalPig" alt="piggy bank withdrawal" src={PigMinus}></img>
                 <h3>Start a New Withdrawal!!</h3>
@@ -60,7 +64,10 @@ export const ProfileList = () => {
             </div>
             <div className="recentDepositDiv recentTransactions">
                 {
-                    allDepositEvents?.map(depositPost => <Deposit key={depositPost.id} deposit={depositPost} />)
+                    allDepositEvents?.map(depositPost => {
+                        <Deposit key={depositPost.id} deposit={depositPost} />
+                    }) 
+                        
                 }
             </div>
             <div className="recentWithdrawalDiv recentTransactions">
