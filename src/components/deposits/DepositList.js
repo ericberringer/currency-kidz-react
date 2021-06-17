@@ -34,31 +34,72 @@ export const DepositList = () => {
         nickel: 0,
         dime: 0,
         quarter: 0,
-        one: 0,
+        dollar: 0,
         five: 0,
         ten: 0,
         twenty: 0,
         fifty: 0,
-        hundred: 0,
-        total: 0
+        hundred: 0
     })
+
+    const [ denominationTotal, setDenominationTotal ] = useState({
+        penny: 0,
+        nickel: 0,
+        dime: 0,
+        quarter: 0,
+        dollar: 0,
+        five: 0,
+        ten: 0,
+        twenty: 0,
+        fifty: 0,
+        hundred: 0
+    })
+
+    const [ total, setTotal ] = useState(0)
 
     const history = useHistory()
 
+    let object = {
+        penny: .01,
+        nickel: .05,
+        dime: .1,
+        quarter: .25,
+        dollar: 1,
+        five: 5,
+        ten: 10,
+        twenty: 20,
+        fifty: 50,
+        hundred: 100
+    }
+
     const handleIncrement = (event) => {
         const denominationCount = { ...currencyCount }
+        const moneyTotal = { ...denominationTotal }
         let counterValue = ++event.target.value
         denominationCount[event.target.name] = counterValue
+        let math = denominationCount[event.target.name] * object[event.target.name]
+        moneyTotal[event.target.name] = parseFloat(math.toFixed(2))
         setCurrencyCount(denominationCount)
+        setDenominationTotal(moneyTotal)
+        let objectTotals = Object.values(moneyTotal)
+        let total = objectTotals.reduce((accumulator, currentValue) => accumulator + currentValue)
+        setTotal(parseFloat(total.toFixed(2)))
     }
 
     
     const handleDecrement = (event) => {
         if (event.target.value > 0){
             const denominationCount = { ...currencyCount }
+            const moneyTotal = { ...denominationTotal }
             let counterValue = --event.target.value
             denominationCount[event.target.name] = counterValue
+            let math = denominationCount[event.target.name] * object[event.target.name]
+            moneyTotal[event.target.name] = parseFloat(math.toFixed(2))
             setCurrencyCount(denominationCount)
+            setDenominationTotal(moneyTotal)
+            let objectTotals = Object.values(moneyTotal)
+            let total = objectTotals.reduce((accumulator, currentValue) => accumulator + currentValue)
+            setTotal(parseFloat(total.toFixed(2)))
         }
     }
 
@@ -77,16 +118,13 @@ export const DepositList = () => {
                     <img className="depositPiggy" src={PiggyBank}></img>
                     <div className="currentDepositDiv">
                     <h3>Total Deposit: $</h3>
-                    <h3 className="currentDeposit">{"3.50"}</h3>
+                    <h3 className="currentDeposit">{total}</h3>
                     <h3> !!</h3>
                 </div>
                 <button>Save Deposit</button>
             </div>
             <Carousel className="carousel">
-                {/* <Container className="coinContainer currencyContainer"> */}
-                    {/* <Row> */}
                 <Carousel.Item interval={500000}>
-                        {/* <Col> */}
                         <Image className="currencyImg coinImg" src={Penny} roundedCircle />
                         <section className="counterSection">
                             <label htmlFor="penny">Penny</label>
@@ -99,10 +137,8 @@ export const DepositList = () => {
                                 <button onClick={handleIncrement} type="button" name="penny" value={currencyCount.penny} className="button-plus counterPlus" data-field="quantity">+</button>
                             </div>
                         </section>
-                        {/* </Col> */}
                 </Carousel.Item>
                 <Carousel.Item interval={500000}>
-                        {/* <Col> */}
                         <Image className="currencyImg coinImg" src={Nickel} roundedCircle />
                         <section className="counterSection">
                             <label htmlFor="nickel">Nickel</label>
@@ -115,10 +151,6 @@ export const DepositList = () => {
                                 <button onClick={handleIncrement} type="button" name="nickel" value={currencyCount.nickel} className="button-plus counterPlus" data-field="quantity">+</button>
                             </div>
                         </section>
-                        {/* </Col> */}
-                    {/* </Row> */}
-                    {/* <Row>        */}
-                        {/* <Col> */}
                 </Carousel.Item>
                 <Carousel.Item interval={500000}>
                         <Image className="currencyImg coinImg" src={Dime} roundedCircle />
@@ -135,8 +167,6 @@ export const DepositList = () => {
                         </section>
                 </Carousel.Item>
                 <Carousel.Item interval={500000}>
-                        {/* </Col> */}
-                        {/* <Col> */}
                         <Image className="currencyImg coinImg" src={Quarter} roundedCircle />
                         <section className="counterSection">
                             <label htmlFor="quarter">Quarter</label>
@@ -151,13 +181,6 @@ export const DepositList = () => {
                         </section>
                     </Carousel.Item>
                     <Carousel.Item interval={500000}>
-
-                        {/* </Col> */}
-                    {/* </Row> */}
-                {/* </Container> */}
-                {/* <Container className="dollarContainer currencyContainer"> */}
-                    {/* <Row> */}
-                        {/* <Col> */}
                             <Image className="currencyImg billImg" src={Dollar} />
                             <section className="counterSection">
                                 <label htmlFor="dollar">Dollar</label>
@@ -172,8 +195,6 @@ export const DepositList = () => {
                             </section>
                     </Carousel.Item>
                     <Carousel.Item interval={500000}>
-                        {/* </Col> */}
-                        {/* <Col> */}
                             <Image className="currencyImg billImg" src={Five} />
                             <section className="counterSection">
                             <label htmlFor="five">Five</label>
@@ -188,10 +209,6 @@ export const DepositList = () => {
                         </section>
                     </Carousel.Item>
                     <Carousel.Item interval={500000}>
-                        {/* </Col> */}
-                    {/* </Row> */}
-                    {/* <Row> */}
-                        {/* <Col> */}
                             <Image className="currencyImg billImg" src={Ten} />
                             <section className="counterSection">
                                 <label htmlFor="ten">Ten</label>
@@ -206,8 +223,6 @@ export const DepositList = () => {
                             </section>
                     </Carousel.Item>
                     <Carousel.Item interval={500000}>
-                        {/* </Col> */}
-                        {/* <Col> */}
                             <Image className="currencyImg billImg" src={Twenty} />
                             <section className="counterSection">
                                 <label htmlFor="twenty">Twenty</label>
@@ -222,10 +237,6 @@ export const DepositList = () => {
                             </section>
                     </Carousel.Item>
                     <Carousel.Item interval={500000}>
-                        {/* // </Col> */}
-                    {/* </Row> */}
-                    {/* <Row> */}
-                        {/* <Col> */}
                             <Image className="currencyImg billImg" src={Fifty} />
                             <section className="counterSection">
                                 <label htmlFor="fifty">Fifty</label>
@@ -240,9 +251,6 @@ export const DepositList = () => {
                             </section>
                     </Carousel.Item>
                     <Carousel.Item interval={500000}>
-
-                        {/* </Col> */}
-                        {/* <Col> */}
                             <Image className="currencyImg billImg" src={Hundred} />
                             <section className="counterSection">
                                 <label htmlFor="hundred">Hundred</label>
@@ -256,9 +264,6 @@ export const DepositList = () => {
                                 </div>
                             </section>
                     </Carousel.Item>
-                        {/* // </Col> */}
-                    {/* </Row> */}
-                {/* </Container> */}
             </Carousel>
         </section>
         </>

@@ -26,6 +26,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+    margin: 0 0 70px 0;
 }
 
 .carousel {
@@ -131,5 +132,3 @@ input[type="number"] {
     border-radius: 20px;
     margin: 0 0 0 10px;
 }
-
-/* Dollar Counter */
