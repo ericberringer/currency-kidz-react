@@ -15,18 +15,18 @@ export const ProfileList = () => {
     const { getProfile, profile } = useContext(ProfileContext)
     const { getDeposits, deposit_events } = useContext(DepositEventContext)
     const { getWithdrawals, withdrawal_events } = useContext(WithdrawalEventContext)
-
+    
     const [ allDepositEvents, setAllDepositEvents ] = useState([])
     const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
-
+    
     const history = useHistory()
-
+    
     useEffect(() => {
         getProfile()
         .then(getDeposits)
-            .then(getWithdrawals)
+        .then(getWithdrawals)
     }, [])
-
+    
     useEffect(() => {
         const allDeposits = deposit_events.filter(dep => dep.total > 0)
         setAllDepositEvents(allDeposits)
@@ -64,9 +64,7 @@ export const ProfileList = () => {
             </div>
             <div className="recentDepositDiv recentTransactions">
                 {
-                    allDepositEvents?.map(depositPost => {
-                        <Deposit key={depositPost.id} deposit={depositPost} />
-                    }) 
+                    allDepositEvents?.map(depositPost => <Deposit key={depositPost.id} deposit={depositPost} />) 
                         
                 }
             </div>
