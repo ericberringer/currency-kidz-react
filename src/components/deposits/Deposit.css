@@ -28,12 +28,19 @@
     text-align: center;
 }
 
+.carousel {
+    background-color: #c7b9fc77;
+    width: 80%;
+    border-radius: 15px;
+    padding: 40px 0
+}
+
 .coinImg {
-    width: 50%;
+    width: 12em;
 }
 
 .billImg {
-    width: 75%;
+    width: 65%;
 }
 
 .currencyImg {
@@ -126,11 +133,3 @@ input[type="number"] {
 }
 
 /* Dollar Counter */
-
-
-
-
-.currencyContainer {
-    display: flex;
-    flex-direction: column;
-}

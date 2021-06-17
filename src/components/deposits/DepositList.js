@@ -20,7 +20,9 @@ import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Carousel from 'react-bootstrap/Carousel'
 import "./Deposit.css"
+import { render } from "@testing-library/react"
 
 export const DepositList = () => {
 
@@ -70,127 +72,194 @@ export const DepositList = () => {
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile" src={Milo}></img>
             </div>
-            <div className="headerDiv">
-                <h1>{profile.saver?.user.first_name} has saved {"{total goes here}"}!!</h1>
-                <img className="depositPiggy" src={PiggyBank}></img>
-                <div className="currentDepositDiv">
-                <h3>Total Deposit: $</h3>
-                <h3 className="currentDeposit">{"3.50"}</h3>
-                <h3> !!</h3>
+                <div className="headerDiv">
+                    <h1>{profile.saver?.user.first_name} has saved {"{total goes here}"}!!</h1>
+                    <img className="depositPiggy" src={PiggyBank}></img>
+                    <div className="currentDepositDiv">
+                    <h3>Total Deposit: $</h3>
+                    <h3 className="currentDeposit">{"3.50"}</h3>
+                    <h3> !!</h3>
                 </div>
+                <button>Save Deposit</button>
             </div>
-            <Container className="coinContainer currencyContainer">
-                <Row>
-                    <Col>
-                    <Image className="currencyImg coinImg" src={Penny} roundedCircle />
-                    <section className="counterSection">
-                        <label htmlFor="penny">Penny</label>
-                        <div className="counterDiv">
-                            <button onClick={handleDecrement} type="button" name="penny" value={currencyCount.penny} className="button-minus counterMinus" data-field="quantity">-</button>
-                            <input type="number" id="penny" step="1" max="500"
-                                    value={currencyCount.penny} name="quantity" 
-                                    className="quantity-field" placeholder="0">
-                            </input>
-                            <button onClick={handleIncrement} type="button" name="penny" value={currencyCount.penny} className="button-plus counterPlus" data-field="quantity">+</button>
-                        </div>
-                    </section>
-                    </Col>
-                    <Col>
-                    <Image className="currencyImg coinImg" src={Nickel} roundedCircle />
-                    <p>Dime</p>
-                    <div className="counterDiv">
-                            <button onClick={handleDecrement} type="button" name="nickel" value={currencyCount.nickel} className="button-minus counterMinus" data-field="quantity">-</button>
-                            <input type="number" id="penny" step="1" max="500"
-                                    value={currencyCount.nickel} name="quantity" 
-                                    className="quantity-field" placeholder="0">
-                            </input>
-                            <button onClick={handleIncrement} type="button" name="nickel" value={currencyCount.nickel} className="button-plus counterPlus" data-field="quantity">+</button>
-                    </div>
-                    </Col>
-                </Row>
-                <Row>       
-                    <Col>
-                    <Image className="currencyImg coinImg" src={Dime} roundedCircle />
-                    <p>Nickel</p>
-                    <div className="counterDiv">
-                        <input type="button" value="-" className="button-minus counterMinus" data-field="quantity"></input>
-                        <input type="number" id="dime" step="1" max="" name="quantity" className="quantity-field" placeholder="0"></input>
-                        <input type="button" value="+" className="button-plus counterPlus" data-field="quantity"></input>
-                    </div>
-                    </Col>
-                    <Col>
-                    <Image className="currencyImg coinImg" src={Quarter} roundedCircle />
-                    <p>Penny</p>
-                    <div className="counterDiv">
-                        <input type="button" value="-" className="button-minus counterMinus" data-field="quantity"></input>
-                        <input type="number" id="quarter" step="1" max="" name="quantity" className="quantity-field" placeholder="0"></input>
-                        <input type="button" value="+" className="button-plus counterPlus" data-field="quantity"></input>
-                    </div>
-                    </Col>
-                </Row>
-            </Container>
-            <Container className="dollarContainer currencyContainer">
-                <Row>
-                    <Col>
-                        <Image className="currencyImg billImg" src={Dollar} />
-                            <p>One Dollar</p>
+            <Carousel className="carousel">
+                {/* <Container className="coinContainer currencyContainer"> */}
+                    {/* <Row> */}
+                <Carousel.Item interval={500000}>
+                        {/* <Col> */}
+                        <Image className="currencyImg coinImg" src={Penny} roundedCircle />
+                        <section className="counterSection">
+                            <label htmlFor="penny">Penny</label>
                             <div className="counterDiv">
-                                <input type="button" value="-" className="button-minus counterMinus" data-field="quantity"></input>
-                                <input type="number" id="dollar" step="1" max="" name="quantity" className="quantity-field" placeholder="0"></input>
-                                <input type="button" value="+" className="button-plus counterPlus" data-field="quantity"></input>
+                                <button onClick={handleDecrement} type="button" name="penny" value={currencyCount.penny} className="button-minus counterMinus" data-field="quantity">-</button>
+                                <input type="number" id="penny" step="1" max="500"
+                                        value={currencyCount.penny} name="quantity" 
+                                        className="quantity-field" placeholder="0">
+                                </input>
+                                <button onClick={handleIncrement} type="button" name="penny" value={currencyCount.penny} className="button-plus counterPlus" data-field="quantity">+</button>
                             </div>
-                    </Col>
-                    <Col>
-                        <Image className="currencyImg billImg" src={Five} />
-                            <p>Five Dollars</p>
+                        </section>
+                        {/* </Col> */}
+                </Carousel.Item>
+                <Carousel.Item interval={500000}>
+                        {/* <Col> */}
+                        <Image className="currencyImg coinImg" src={Nickel} roundedCircle />
+                        <section className="counterSection">
+                            <label htmlFor="nickel">Nickel</label>
                             <div className="counterDiv">
-                                <input type="button" value="-" className="button-minus counterMinus" data-field="quantity"></input>
-                                <input type="number" id="five" step="1" max="" name="quantity" className="quantity-field" placeholder="0"></input>
-                                <input type="button" value="+" className="button-plus counterPlus" data-field="quantity"></input>
+                                <button onClick={handleDecrement} type="button" name="nickel" value={currencyCount.nickel} className="button-minus counterMinus" data-field="quantity">-</button>
+                                <input type="number" id="nickel" step="1" max="500"
+                                        value={currencyCount.nickel} name="quantity" 
+                                        className="quantity-field" placeholder="0">
+                                </input>
+                                <button onClick={handleIncrement} type="button" name="nickel" value={currencyCount.nickel} className="button-plus counterPlus" data-field="quantity">+</button>
                             </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Image className="currencyImg billImg" src={Ten} />
-                            <p>Ten Dollars</p>
+                        </section>
+                        {/* </Col> */}
+                    {/* </Row> */}
+                    {/* <Row>        */}
+                        {/* <Col> */}
+                </Carousel.Item>
+                <Carousel.Item interval={500000}>
+                        <Image className="currencyImg coinImg" src={Dime} roundedCircle />
+                        <section className="counterSection">
+                            <label htmlFor="dime">Dime</label>
                             <div className="counterDiv">
-                                <input type="button" value="-" className="button-minus counterMinus" data-field="quantity"></input>
-                                <input type="number" id="ten" step="1" max="" name="quantity" className="quantity-field" placeholder="0"></input>
-                                <input type="button" value="+" className="button-plus counterPlus" data-field="quantity"></input>
+                                <button onClick={handleDecrement} type="button" name="dime" value={currencyCount.dime} className="button-minus counterMinus" data-field="quantity">-</button>
+                                <input type="number" id="dime" step="1" max="500"
+                                        value={currencyCount.dime} name="quantity" 
+                                        className="quantity-field" placeholder="0">
+                                </input>
+                                <button onClick={handleIncrement} type="button" name="dime" value={currencyCount.dime} className="button-plus counterPlus" data-field="quantity">+</button>
                             </div>
-                    </Col>
-                    <Col>
-                        <Image className="currencyImg billImg" src={Twenty} />
-                            <p>Twenty Dollars</p>
+                        </section>
+                </Carousel.Item>
+                <Carousel.Item interval={500000}>
+                        {/* </Col> */}
+                        {/* <Col> */}
+                        <Image className="currencyImg coinImg" src={Quarter} roundedCircle />
+                        <section className="counterSection">
+                            <label htmlFor="quarter">Quarter</label>
                             <div className="counterDiv">
-                                <input type="button" value="-" className="button-minus counterMinus" data-field="quantity"></input>
-                                <input type="number" id="twenty" step="1" max="" name="quantity" className="quantity-field" placeholder="0"></input>
-                                <input type="button" value="+" className="button-plus counterPlus" data-field="quantity"></input>
+                                <button onClick={handleDecrement} type="button" name="quarter" value={currencyCount.quarter} className="button-minus counterMinus" data-field="quantity">-</button>
+                                <input type="number" id="quarter" step="1" max="500"
+                                        value={currencyCount.quarter} name="quantity" 
+                                        className="quantity-field" placeholder="0">
+                                </input>
+                                <button onClick={handleIncrement} type="button" name="quarter" value={currencyCount.quarter} className="button-plus counterPlus" data-field="quantity">+</button>
                             </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Image className="currencyImg billImg" src={Fifty} />
-                            <p>Fifty Dollars</p>
+                        </section>
+                    </Carousel.Item>
+                    <Carousel.Item interval={500000}>
+
+                        {/* </Col> */}
+                    {/* </Row> */}
+                {/* </Container> */}
+                {/* <Container className="dollarContainer currencyContainer"> */}
+                    {/* <Row> */}
+                        {/* <Col> */}
+                            <Image className="currencyImg billImg" src={Dollar} />
+                            <section className="counterSection">
+                                <label htmlFor="dollar">Dollar</label>
+                                <div className="counterDiv">
+                                    <button onClick={handleDecrement} type="button" name="dollar" value={currencyCount.dollar} className="button-minus counterMinus" data-field="quantity">-</button>
+                                    <input type="number" id="dollar" step="1" max="500"
+                                            value={currencyCount.dollar} name="quantity" 
+                                            className="quantity-field" placeholder="0">
+                                    </input>
+                                    <button onClick={handleIncrement} type="button" name="dollar" value={currencyCount.dollar} className="button-plus counterPlus" data-field="quantity">+</button>
+                                </div>
+                            </section>
+                    </Carousel.Item>
+                    <Carousel.Item interval={500000}>
+                        {/* </Col> */}
+                        {/* <Col> */}
+                            <Image className="currencyImg billImg" src={Five} />
+                            <section className="counterSection">
+                            <label htmlFor="five">Five</label>
                             <div className="counterDiv">
-                                <input type="button" value="-" className="button-minus counterMinus" data-field="quantity"></input>
-                                <input type="number" id="fifty" step="1" max="" name="quantity" className="quantity-field" placeholder="0"></input>
-                                <input type="button" value="+" className="button-plus counterPlus" data-field="quantity"></input>
+                                <button onClick={handleDecrement} type="button" name="five" value={currencyCount.five} className="button-minus counterMinus" data-field="quantity">-</button>
+                                <input type="number" id="five" step="1" max="500"
+                                        value={currencyCount.five} name="quantity" 
+                                        className="quantity-field" placeholder="0">
+                                </input>
+                                <button onClick={handleIncrement} type="button" name="five" value={currencyCount.five} className="button-plus counterPlus" data-field="quantity">+</button>
                             </div>
-                    </Col>
-                    <Col>
-                        <Image className="currencyImg billImg" src={Hundred} />
-                            <p>One Hundred Dollars</p>
-                            <div className="counterDiv">
-                                <input type="button" value="-" className="button-minus counterMinus" data-field="quantity"></input>
-                                <input type="number" id="hundred" step="1" max="" name="quantity" className="quantity-field" placeholder="0"></input>
-                                <input type="button" value="+" className="button-plus counterPlus" data-field="quantity"></input>
-                            </div>
-                    </Col>
-                </Row>
-            </Container>
+                        </section>
+                    </Carousel.Item>
+                    <Carousel.Item interval={500000}>
+                        {/* </Col> */}
+                    {/* </Row> */}
+                    {/* <Row> */}
+                        {/* <Col> */}
+                            <Image className="currencyImg billImg" src={Ten} />
+                            <section className="counterSection">
+                                <label htmlFor="ten">Ten</label>
+                                <div className="counterDiv">
+                                    <button onClick={handleDecrement} type="button" name="ten" value={currencyCount.ten} className="button-minus counterMinus" data-field="quantity">-</button>
+                                    <input type="number" id="ten" step="1" max="500"
+                                            value={currencyCount.ten} name="quantity" 
+                                            className="quantity-field" placeholder="0">
+                                    </input>
+                                    <button onClick={handleIncrement} type="button" name="ten" value={currencyCount.ten} className="button-plus counterPlus" data-field="quantity">+</button>
+                                </div>
+                            </section>
+                    </Carousel.Item>
+                    <Carousel.Item interval={500000}>
+                        {/* </Col> */}
+                        {/* <Col> */}
+                            <Image className="currencyImg billImg" src={Twenty} />
+                            <section className="counterSection">
+                                <label htmlFor="twenty">Twenty</label>
+                                <div className="counterDiv">
+                                    <button onClick={handleDecrement} type="button" name="twenty" value={currencyCount.twenty} className="button-minus counterMinus" data-field="quantity">-</button>
+                                    <input type="number" id="twenty" step="1" max="500"
+                                            value={currencyCount.twenty} name="quantity" 
+                                            className="quantity-field" placeholder="0">
+                                    </input>
+                                    <button onClick={handleIncrement} type="button" name="twenty" value={currencyCount.twenty} className="button-plus counterPlus" data-field="quantity">+</button>
+                                </div>
+                            </section>
+                    </Carousel.Item>
+                    <Carousel.Item interval={500000}>
+                        {/* // </Col> */}
+                    {/* </Row> */}
+                    {/* <Row> */}
+                        {/* <Col> */}
+                            <Image className="currencyImg billImg" src={Fifty} />
+                            <section className="counterSection">
+                                <label htmlFor="fifty">Fifty</label>
+                                <div className="counterDiv">
+                                    <button onClick={handleDecrement} type="button" name="fifty" value={currencyCount.fifty} className="button-minus counterMinus" data-field="quantity">-</button>
+                                    <input type="number" id="fifty" step="1" max="500"
+                                            value={currencyCount.fifty} name="quantity" 
+                                            className="quantity-field" placeholder="0">
+                                    </input>
+                                    <button onClick={handleIncrement} type="button" name="fifty" value={currencyCount.fifty} className="button-plus counterPlus" data-field="quantity">+</button>
+                                </div>
+                            </section>
+                    </Carousel.Item>
+                    <Carousel.Item interval={500000}>
+
+                        {/* </Col> */}
+                        {/* <Col> */}
+                            <Image className="currencyImg billImg" src={Hundred} />
+                            <section className="counterSection">
+                                <label htmlFor="hundred">Hundred</label>
+                                <div className="counterDiv">
+                                    <button onClick={handleDecrement} type="button" name="hundred" value={currencyCount.hundred} className="button-minus counterMinus" data-field="quantity">-</button>
+                                    <input type="number" id="hundred" step="1" max="500"
+                                            value={currencyCount.hundred} name="quantity" 
+                                            className="quantity-field" placeholder="0">
+                                    </input>
+                                    <button onClick={handleIncrement} type="button" name="hundred" value={currencyCount.hundred} className="button-plus counterPlus" data-field="quantity">+</button>
+                                </div>
+                            </section>
+                    </Carousel.Item>
+                        {/* // </Col> */}
+                    {/* </Row> */}
+                {/* </Container> */}
+            </Carousel>
         </section>
         </>
     )
