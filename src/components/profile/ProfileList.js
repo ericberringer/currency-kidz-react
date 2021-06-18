@@ -15,18 +15,18 @@ export const ProfileList = () => {
     const { getProfile, profile } = useContext(ProfileContext)
     const { getDeposits, deposit_events } = useContext(DepositEventContext)
     const { getWithdrawals, withdrawal_events } = useContext(WithdrawalEventContext)
-
+    
     const [ allDepositEvents, setAllDepositEvents ] = useState([])
     const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
-
+    
     const history = useHistory()
-
+    
     useEffect(() => {
         getProfile()
         .then(getDeposits)
-            .then(getWithdrawals)
+        .then(getWithdrawals)
     }, [])
-
+    
     useEffect(() => {
         const allDeposits = deposit_events.filter(dep => dep.total > 0)
         setAllDepositEvents(allDeposits)
@@ -46,12 +46,12 @@ export const ProfileList = () => {
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
                 <img className="piggyBank image" alt="piggy bank deposit" src={PigPlus}
-                    onClick={() =>
-                        history.push("/create/deposit_event")
+                    onClick={() => history.push("/create/deposit_event")
                         // audio.play()
                 }></img>
                 <h3>Start a New Deposit!!</h3>
-                <img className="piggyBank image withdrawalPig" alt="piggy bank withdrawal" src={PigMinus}></img>
+                <img className="piggyBank image withdrawalPig" alt="piggy bank withdrawal" src={PigMinus}
+                    onClick={() => history.push("/create/withdrawal_event")}></img>
                 <h3>Start a New Withdrawal!!</h3>
             </div>
             <div className="recentActivity">
@@ -64,9 +64,7 @@ export const ProfileList = () => {
             </div>
             <div className="recentDepositDiv recentTransactions">
                 {
-                    allDepositEvents?.map(depositPost => {
-                        <Deposit key={depositPost.id} deposit={depositPost} />
-                    }) 
+                    allDepositEvents?.map(depositPost => <Deposit key={depositPost.id} deposit={depositPost} />) 
                         
                 }
             </div>
