@@ -46,12 +46,12 @@ export const ProfileList = () => {
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
                 <img className="piggyBank image" alt="piggy bank deposit" src={PigPlus}
-                    onClick={() =>
-                        history.push("/create/deposit_event")
+                    onClick={() => history.push("/create/deposit_event")
                         // audio.play()
                 }></img>
                 <h3>Start a New Deposit!!</h3>
-                <img className="piggyBank image withdrawalPig" alt="piggy bank withdrawal" src={PigMinus}></img>
+                <img className="piggyBank image withdrawalPig" alt="piggy bank withdrawal" src={PigMinus}
+                    onClick={() => history.push("/create/withdrawal_event")}></img>
                 <h3>Start a New Withdrawal!!</h3>
             </div>
             <div className="recentActivity">
