@@ -24,14 +24,14 @@ export const Withdrawal = ({withdrawal}) => {
             <h4>{new Date (withdrawal.date).toLocaleDateString()}</h4>
         </div>
         <div className="recentColumn">
-            <h4>${withdrawal.total}</h4>
+            <h4>-${withdrawal.total}</h4>
         </div>
     </section>
     <div>
     {urlPath === "/recent_activity" ?
     <div className="editDeleteButtonDiv">
-        <button className="editButton" onClick={() => history.push(`/recent_activity/edit_withdrawal/${withdrawal.id}`)}>Edit</button>
-        <button className="deleteButton" onClick={handleDelete}>Delete</button>
+        <button className="editButton button2" onClick={() => history.push(`/recent_activity/edit_withdrawal/${withdrawal.id}`)}>Edit</button>
+        <button className="deleteButton button2" onClick={handleDelete}>Delete</button>
     </div>
         :
     null
