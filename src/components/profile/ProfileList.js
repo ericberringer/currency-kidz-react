@@ -36,6 +36,10 @@ export const ProfileList = () => {
 
     // let audio = new Audio("")
 
+    let totalWithdrawals = profile?.withdrawal_events?.reduce((total, event) => total+parseFloat(event.total), 0)
+    let totalDeposits = profile?.deposit_events?.reduce((total, event) => total+parseFloat(event.total), 0)
+    let currentSaved = totalDeposits - totalWithdrawals
+
 
     return (
         <div className="profileList">
@@ -45,6 +49,7 @@ export const ProfileList = () => {
             </div>
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
+                <h2>You have saved ${currentSaved}!!</h2>
                 <img className="piggyBank image" alt="piggy bank deposit" src={PigPlus}
                     onClick={() => history.push("/create/deposit_event")
                         // audio.play()

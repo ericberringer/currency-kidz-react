@@ -133,6 +133,9 @@ export const DepositList = () => {
     // total is the accumulator which is what everything is going to be added to in the loop
     // zero at the end is telling total to start from 0
     // event.total is accessing the values we want to add together, parseFloat converts from strings to numbers with decimals
+    let totalWithdrawals = profile?.withdrawal_events?.reduce((total, event) => total+parseFloat(event.total), 0)
+    let allDeposits = profile?.deposit_events?.reduce((total, event) => total+parseFloat(event.total), 0)
+    let currentSaved = allDeposits - totalWithdrawals
 
     return (
         <>
@@ -140,7 +143,7 @@ export const DepositList = () => {
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile" src={Milo}></img>
             </div>
-                <h1>{profile.saver?.user.first_name} has saved ${totalDeposits}!!</h1>
+                <h1>{profile.saver?.user.first_name} has saved ${currentSaved}!!</h1>
                 <div className="depositHeaderDiv">
                     <img className="depositPiggy" src={PiggyBank}></img>
                     <div className="currentDepositDiv">

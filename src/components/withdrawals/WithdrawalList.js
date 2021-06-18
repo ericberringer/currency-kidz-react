@@ -124,7 +124,7 @@ export const WithdrawalList = () => {
         getProfile()
     }, [])
 
-    let totalWithdrawals = profile?.withdrawal_events?.reduce((total, event) => total+parseFloat(event.total), 0)
+    // let totalWithdrawals = profile?.withdrawal_events?.reduce((total, event) => total+parseFloat(event.total), 0)
     // total is the accumulator which is what everything is going to be added to in the loop
     // zero at the end is telling total to start from 0
     // event.total is accessing the values we want to add together, parseFloat converts from strings to numbers with decimals
