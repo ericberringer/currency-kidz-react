@@ -25,14 +25,14 @@ export const Deposit = ({deposit}) => {
             <h4>{new Date (deposit.date).toLocaleDateString()}</h4>
         </div>
         <div className="recentColumn">
-            <h4>${deposit.total}</h4>
+            <h4>+${deposit.total}</h4>
         </div>
     </section>
     <div>
     {urlPath === "/recent_activity" ?
     <div className="editDeleteButtonDiv">
-        <button className="editButton" onClick={() => history.push(`/recent_activity/edit_deposit/${deposit.id}`)}>Edit</button>
-        <button className="deleteButton" onClick={handleDelete}>Delete</button>
+        <button className="editButton button2" onClick={() => history.push(`/recent_activity/edit_deposit/${deposit.id}`)}>Edit</button>
+        <button className="deleteButton button2" onClick={handleDelete}>Delete</button>
     </div>
         :
     null

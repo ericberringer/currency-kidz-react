@@ -4,7 +4,6 @@ import { ProfileContext } from "../profile/ProfileProvider"
 import { Deposit } from "../profile/Deposit"
 import { Withdrawal } from "../profile/Withdrawal"
 import Milo from "../profile/Milo.png"
-// import ""./Profile.css""
 import { DepositEventContext } from "../deposits/DepositProvider"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 
@@ -43,17 +42,25 @@ export const RecentActivityList = () => {
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
             </div>
             <div className="recentActivity">
-                <h3>Recent Activity</h3>
+                <h3 className="underline">Your Deposits</h3>
             </div>
             <div className="recentActivityTitles">
-                <h4>Name</h4>
-                <h4>Date</h4>
-                <h4>Amount</h4>
+                <h4 className="underline">Name</h4>
+                <h4 className="underline">Date</h4>
+                <h4 className="underline">Amount</h4>
             </div>
             <div className="recentDepositDiv recentTransactions">
                 {
                     allDepositEvents?.map(depositPost => <Deposit key={depositPost.id} deposit={depositPost} />)
                 }
+            </div>
+            <div className="recentActivity">
+                <h3 className="underline">Your Withdrawals</h3>
+            </div>
+            <div className="recentActivityTitles withdrawalTitles">
+                <h4 className="underline">Name</h4>
+                <h4 className="underline">Date</h4>
+                <h4 className="underline">Amount</h4>
             </div>
             <div className="recentWithdrawalDiv recentTransactions">
                 {
