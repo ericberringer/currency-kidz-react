@@ -49,9 +49,24 @@ export const WithdrawalProvider = (props) =>{
             .then(res => res.json())
     }
 
+    const deleteWithdrawal = (withdrawalId) => {
+        return fetch(`http://localhost:8000/withdrawal_events/${withdrawalId}`, {
+            method: "DELETE",
+            headers:{
+                "Authorization": `Token ${localStorage.getItem("ck_user_id")}`
+            }
+        })
+            .then(getWithdrawals)
+    }
+
     return (
       <WithdrawalEventContext.Provider value={{
-          withdrawal_events, getWithdrawals, updateWithdrawal, getWithdrawalById, createWithdrawal
+          withdrawal_events,
+          getWithdrawals, 
+          updateWithdrawal,
+          getWithdrawalById,
+          createWithdrawal,
+          deleteWithdrawal
       }}>
           {props.children}
       </WithdrawalEventContext.Provider>

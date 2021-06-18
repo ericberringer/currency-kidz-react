@@ -1,23 +1,39 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./Profile.css"
 import { useHistory } from "react-router-dom"
+import { DepositEventContext } from "../deposits/DepositProvider"
 
 export const Deposit = ({deposit}) => {
+
+    const { deleteDeposit } = useContext(DepositEventContext)
 
     const history = useHistory()
     const urlPath = history.location.pathname
     // saves current location
 
+    const handleDelete = () => {
+        deleteDeposit(deposit.id)
+    }
+
     return (
     <>
     <section className="recentActivityCard">
-        <h4>{deposit.name}</h4>
-        <h4>{new Date (deposit.date).toLocaleDateString()}</h4>
-        <h4>${deposit.total}</h4>
+        <div className="recentColumn">
+            <h4>{deposit.name}</h4>
+        </div>
+        <div className="recentColumn">
+            <h4>{new Date (deposit.date).toLocaleDateString()}</h4>
+        </div>
+        <div className="recentColumn">
+            <h4>${deposit.total}</h4>
+        </div>
     </section>
     <div>
     {urlPath === "/recent_activity" ?
-        <button onClick={() => history.push(`/recent_activity/edit_deposit/${deposit.id}`)}>Edit</button>
+    <div className="editDeleteButtonDiv">
+        <button className="editButton" onClick={() => history.push(`/recent_activity/edit_deposit/${deposit.id}`)}>Edit</button>
+        <button className="deleteButton" onClick={handleDelete}>Delete</button>
+    </div>
         :
     null
     }
