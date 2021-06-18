@@ -16,6 +16,18 @@ export const WithdrawalProvider = (props) =>{
           .then(setWithdrawals)
     }
 
+    const createWithdrawal = newDep => {
+        return fetch("http://localhost:8000/withdrawal_events", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Token ${localStorage.getItem("ck_user_id")}`
+            },
+            body: JSON.stringify(newDep)
+        })
+            .then(getWithdrawals)
+    }
+
     const updateWithdrawal = withdrawal => {
         return fetch(`http://localhost:8000/withdrawal_events/${withdrawal.id}`, {
             method: "PUT",
@@ -39,7 +51,7 @@ export const WithdrawalProvider = (props) =>{
 
     return (
       <WithdrawalEventContext.Provider value={{
-          withdrawal_events, getWithdrawals, updateWithdrawal, getWithdrawalById
+          withdrawal_events, getWithdrawals, updateWithdrawal, getWithdrawalById, createWithdrawal
       }}>
           {props.children}
       </WithdrawalEventContext.Provider>

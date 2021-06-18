@@ -146,7 +146,7 @@ export const WithdrawalList = () => {
                                 onChange={handleInputChange}>
                         </input>
                         <div className="totalDepositDiv">
-                            <h3>Total Withdrawal: $</h3>
+                            <h3>Withdrawal: $ </h3>
                             <h3 className="currentDeposit">{parseFloat(total).toFixed(2)}</h3>
                         </div>
                     </div>
