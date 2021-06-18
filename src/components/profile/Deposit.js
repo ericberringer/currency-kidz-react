@@ -27,6 +27,9 @@ export const Deposit = ({deposit}) => {
         <div className="recentColumn">
             <h4>+${deposit.total}</h4>
         </div>
+        <div>
+            {console.log(deposit.currency)}
+        </div>
     </section>
     <div>
     {urlPath === "/recent_activity" ?

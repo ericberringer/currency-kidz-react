@@ -80,7 +80,7 @@ export const EditDepositForm = () => {
                         value={event.total}
                         ></input>
                 </fieldset>
-                <button className="saveEditButton"
+                <button className="saveEditButton button"
                         onClick={evt => {
                             evt.preventDefault()
                             handleSaveEvent()
