@@ -11,3 +11,15 @@
 .cancelButton {
     margin: 15px 0 0 5px;
 }
+
+.editDeleteButtonDiv {
+    margin: 3px 0 15px 0;
+}
+
+.editButton {
+    margin: 0 5px 0 0;
+}
+
+.deleteButton {
+    margin: 0 0 0 5px;
+}
