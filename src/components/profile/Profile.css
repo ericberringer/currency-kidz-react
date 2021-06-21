@@ -17,10 +17,6 @@
     cursor: default;
 }
 
-.denomBreakdown {
-    border: 2px black dotted;
-}
-
 .moreButtonDiv {
     display: flex;
     align-items: center;
@@ -65,6 +61,40 @@
 .recentTransactions {
     padding: 10px 10px 0 10px;
     width: 85%;
+}
+
+.denomBreakdown {
+    margin: 0 0 15px 0;
+}
+
+.denom {
+    display: flex;
+    justify-content: center;
+    margin: 3px 0;
+}
+
+.denomImg {
+    width: 45%;
+    display: flex;
+}
+
+.denomAmountDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 0 5px;
+}
+
+.denomAmountCoins {
+
+}
+
+.denomAmountBills {
+    
+}
+
+.denomMiddleRow {
+    margin: 30px 0;
 }
 
 .recentWithdrawalDiv {

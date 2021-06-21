@@ -2,8 +2,22 @@ import React, { useContext } from "react"
 import "./Profile.css"
 import { useHistory } from "react-router-dom"
 import { DepositEventContext } from "../deposits/DepositProvider"
+import Quarter from "./images/Quarter.png"
+import Dime from "./images/Dime.png"
+import Nickel from "./images/Nickel.png"
+import Penny from "./images/Penny.png"
+import Dollar from "./images/Dollar.jpeg"
+import Five from "./images/Five.jpeg"
+import Ten from "./images/Ten.png"
+import Twenty from "./images/Twenty.png"
+import Fifty from "./images/Fifty.png"
+import Hundred from "./images/Hundred.png"
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
+import Image from 'react-bootstrap/Image'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 export const Deposit = ({deposit}) => {
 
@@ -45,38 +59,94 @@ export const Deposit = ({deposit}) => {
     <div>
     {urlPath === "/recent_activity" ?
     <div className="editDeleteButtonDiv">
-        <div className="denomBreakdown">
-            <div className="denom">
-                Penny: {deposit.currency.penny}
-            </div>
-            <div className="denom">
-                Nickel: {deposit.currency.nickel}
-            </div>
-            <div className="denom">
-                Dime: {deposit.currency.dime}
-            </div>
-            <div className="denom">
-                Quarter: {deposit.currency.quarter}
-            </div>
-            <div className="denom">
-                One Dollar: {deposit.currency.one_dollar}
-            </div>
-            <div className="denom">
-                Five Dollars: {deposit.currency.five_dollars}
-            </div>
-            <div className="denom">
-                Ten Dollars: {deposit.currency.ten_dollars}
-            </div>
-            <div className="denom">
-                Twenty Dollars: {deposit.currency.twenty_dollars}
-            </div>
-            <div className="denom">
-                Fifty Dollars: {deposit.currency.fifty_dollars}
-            </div>
-            <div className="denom">
-                One Hundred Dollars: {deposit.currency.one_hundred_dollars}
-            </div>
-        </div>
+        <Container className="denomBreakdown">
+            <Row>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Penny} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountCoins"> = {deposit.currency.penny}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Nickel} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountCoins"> = {deposit.currency.nickel}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Dime} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountCoins"> = {deposit.currency.dime}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Quarter} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountCoins"> = {deposit.currency.quarter}</h5>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+            <Row className="denomMiddleRow">
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Dollar} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {deposit.currency.one_dollar}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Five} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {deposit.currency.five_dollars}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Ten} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {deposit.currency.ten_dollars}</h5>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Twenty} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {deposit.currency.twenty_dollars}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Fifty} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {deposit.currency.fifty_dollars}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Hundred} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {deposit.currency.one_hundred_dollars}</h5>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
         <button className="editButton button2" onClick={() => history.push(`/recent_activity/edit_deposit/${deposit.id}`)}>Edit</button>
         <button className="deleteButton button2" onClick={handleDelete}>Delete</button>
     </div>
