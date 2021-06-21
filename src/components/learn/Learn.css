@@ -1,0 +1,28 @@
+.learnHeader {
+    text-align: center;
+}
+
+.learnArticle {
+    border: 2px dotted red;
+    text-align: center;
+}
+
+.learnCoinImg {
+    width: 35%;
+    margin: 20px 0;
+}
+
+.learnBillImg {
+    width: 60%;
+    padding: 15px 0;
+}
+
+.learnCoinImg:hover {
+    transform: scale(1.20);
+    transition: .4s;
+}
+
+.learnBillImg:hover {
+    transform: scale(1.0);
+    transition: .4s;
+}
