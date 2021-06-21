@@ -14,6 +14,10 @@ import Fifty from "./images/Fifty.png"
 import Hundred from "./images/Hundred.png"
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
+import Image from 'react-bootstrap/Image'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 export const Withdrawal = ({withdrawal}) => {
 
@@ -52,9 +56,99 @@ export const Withdrawal = ({withdrawal}) => {
     <Card.Body className="cardBody">
     <div>
     {urlPath === "/recent_activity" ?
-    <div className="editDeleteButtonDiv">
-        <button className="editButton button2" onClick={() => history.push(`/recent_activity/edit_withdrawal/${withdrawal.id}`)}>Edit</button>
-        <button className="deleteButton button2" onClick={handleDelete}>Delete</button>
+    <div>
+        <Container className="denomBreakdown">
+            <Row>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Penny} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountCoins"> = {withdrawal.currency.penny}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Nickel} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountCoins"> = {withdrawal.currency.nickel}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Dime} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountCoins"> = {withdrawal.currency.dime}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Quarter} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountCoins"> = {withdrawal.currency.quarter}</h5>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+            <Row className="denomMiddleRow">
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Dollar} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {withdrawal.currency.one_dollar}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Five} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {withdrawal.currency.five_dollars}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Ten} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {withdrawal.currency.ten_dollars}</h5>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Twenty} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {withdrawal.currency.twenty_dollars}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Fifty} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {withdrawal.currency.fifty_dollars}</h5>
+                        </div>
+                    </div>
+                </Col>
+                <Col>
+                    <div className="denom">
+                        <Image className="denomImg" alt="coin bill" src={Hundred} />
+                        <div className="denomAmountDiv">
+                            <h5 className="denomAmount denomAmountBills"> = {withdrawal.currency.one_hundred_dollars}</h5>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
+        <div className="editDeleteButtonDiv">
+            <button className="editButton button2" onClick={() => history.push(`/recent_activity/edit_withdrawal/${withdrawal.id}`)}>Edit</button>
+            <button className="deleteButton button2" onClick={handleDelete}>Delete</button>
+        </div>
     </div>
         :
     null
