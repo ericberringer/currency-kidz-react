@@ -81,8 +81,8 @@ export const DepositList = () => {
         const denominationCount = { ...currencyCount }
         const moneyTotal = { ...denominationTotal }
         let counterValue = ++event.target.value
-        denominationCount[event.target.name] = counterValue
-        let math = denominationCount[event.target.name] * object[event.target.name]
+        denominationCount[event.target.name] = parseInt(counterValue)
+        let math = counterValue * object[event.target.name]
         moneyTotal[event.target.name] = parseFloat(math.toFixed(2))
         setCurrencyCount(denominationCount)
         setDenominationTotal(moneyTotal)
@@ -97,8 +97,8 @@ export const DepositList = () => {
             const denominationCount = { ...currencyCount }
             const moneyTotal = { ...denominationTotal }
             let counterValue = --event.target.value
-            denominationCount[event.target.name] = counterValue
-            let math = denominationCount[event.target.name] * object[event.target.name]
+            denominationCount[event.target.name] = parseInt(counterValue)
+            let math = counterValue * object[event.target.name]
             moneyTotal[event.target.name] = parseFloat(math.toFixed(2))
             setCurrencyCount(denominationCount)
             setDenominationTotal(moneyTotal)
@@ -159,7 +159,7 @@ export const DepositList = () => {
                         </div>
                     </div>
             </div>
-                <button className="saveDepositButton" onClick={saveDeposit}>Save Deposit</button>
+                <button className="saveDepositButton button" onClick={saveDeposit}>Save Deposit</button>
             <Carousel className="carousel">
                 <Carousel.Item interval={50000000}>
                         <Image className="currencyImg coinImg" src={Penny} roundedCircle />
