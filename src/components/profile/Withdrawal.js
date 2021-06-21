@@ -2,6 +2,16 @@ import React, { useContext } from "react"
 import "./Profile.css"
 import { useHistory } from "react-router-dom"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
+import Quarter from "./images/Quarter.png"
+import Dime from "./images/Dime.png"
+import Nickel from "./images/Nickel.png"
+import Penny from "./images/Penny.png"
+import Dollar from "./images/Dollar.jpeg"
+import Five from "./images/Five.jpeg"
+import Ten from "./images/Ten.png"
+import Twenty from "./images/Twenty.png"
+import Fifty from "./images/Fifty.png"
+import Hundred from "./images/Hundred.png"
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 
