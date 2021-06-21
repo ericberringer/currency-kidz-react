@@ -9,6 +9,7 @@ import { EditWithdrawalForm } from "./recentactivity/EditWithdrawalForm"
 import { RecentActivityList } from "./recentactivity/RecentActivityList"
 import { DepositList } from "./deposits/DepositList"
 import { WithdrawalList } from "./withdrawals/WithdrawalList"
+import { LearnList } from "./learn/LearnList"
 
 
 export const ApplicationViews = () => {
@@ -85,7 +86,19 @@ export const ApplicationViews = () => {
             </DepositProvider>
         </ProfileProvider>
 
-        {/* Currency Area */}
+        {/* Learn Area */}
+        <ProfileProvider>
+            <DepositProvider>
+                <WithdrawalProvider>
+
+                <Route exact path="/learn">
+                    <LearnList />
+                </Route>
+
+                </WithdrawalProvider>
+            </DepositProvider>
+        </ProfileProvider>
+
         {/* Quiz Area */}
     </>
     )}

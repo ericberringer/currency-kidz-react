@@ -46,10 +46,14 @@ export const Withdrawal = ({withdrawal}) => {
             <h4>-${withdrawal.total}</h4>
         </div>
     </section>
+    {urlPath === "/recent_activity" ?
     <div className="moreButtonDiv">
         <h7 className="accordionButton down"></h7>
         <h7>More</h7>
     </div>
+    :
+    null
+    }
     </Accordion.Toggle>
     </Card.Header>
     <Accordion.Collapse eventKey="0">

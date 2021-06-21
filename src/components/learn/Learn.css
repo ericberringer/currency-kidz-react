@@ -1,0 +1,38 @@
+.learnContainerDiv {
+    text-align: center;
+}
+
+.learnHeader {
+    text-align: center;
+    margin: 0 0 50px 0;
+}
+
+.learnCoins {
+    margin: 0 0 60px 0;
+}
+
+.learnCol {
+    text-align: center;
+}
+
+.learnCoinImg {
+    width: 80%;
+}
+
+.learnBillImg {
+    width: 90%;
+}
+
+.middleRowBillsLearn {
+    margin: 35px 0;
+}
+
+.learnCoinImg:hover {
+    transform: scale(1.42);
+    transition: .4s;
+}
+
+.learnBillImg:hover {
+    transform: scale(1.30);
+    transition: .4s;
+}
