@@ -58,7 +58,7 @@ export const Deposit = ({deposit}) => {
     <Card.Body className="cardBody">
     <div>
     {urlPath === "/recent_activity" ?
-    <div className="editDeleteButtonDiv">
+    <div>
         <Container className="denomBreakdown">
             <Row>
                 <Col>
@@ -147,8 +147,10 @@ export const Deposit = ({deposit}) => {
                 </Col>
             </Row>
         </Container>
-        <button className="editButton button2" onClick={() => history.push(`/recent_activity/edit_deposit/${deposit.id}`)}>Edit</button>
-        <button className="deleteButton button2" onClick={handleDelete}>Delete</button>
+        <div className="editDeleteButtonDiv">
+            <button className="editButton button2" onClick={() => history.push(`/recent_activity/edit_deposit/${deposit.id}`)}>Edit</button>
+            <button className="deleteButton button2" onClick={handleDelete}>Delete</button>
+        </div>
     </div>
         :
         null

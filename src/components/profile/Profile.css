@@ -64,13 +64,13 @@
 }
 
 .denomBreakdown {
-    margin: 0 0 15px 0;
+    margin: 3px 0 25px 0;
 }
 
 .denom {
     display: flex;
     justify-content: center;
-    margin: 3px 0;
+    margin: 5px 0;
 }
 
 .denomImg {
@@ -85,13 +85,13 @@
     margin: 0 0 0 5px;
 }
 
-.denomAmountCoins {
+/* .denomAmountCoins {
 
 }
 
 .denomAmountBills {
     
-}
+} */
 
 .denomMiddleRow {
     margin: 30px 0;
