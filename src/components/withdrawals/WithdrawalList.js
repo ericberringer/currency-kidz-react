@@ -151,7 +151,7 @@ export const WithdrawalList = () => {
                         </div>
                     </div>
             </div>
-                <button className="saveDepositButton" onClick={saveWithdrawal}>Save Withdrawal</button>
+                <button className="saveDepositButton button" onClick={saveWithdrawal}>Save Withdrawal</button>
             <Carousel className="carousel">
                 <Carousel.Item interval={50000000}>
                         <Image className="currencyImg coinImg" src={Penny} roundedCircle />
