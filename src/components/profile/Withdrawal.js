@@ -33,8 +33,8 @@ export const Withdrawal = ({withdrawal}) => {
     return (
     <>
 <Accordion>
-    <Card.Header>
-    <Accordion.Toggle as={Card.Header} variant="link" eventKey="0">
+    <Col>
+    <Accordion.Toggle as={Col} variant="link" eventKey="0">
     <section className="recentActivityCard">
         <div className="recentColumn">
             <h4 className="depWithName">{withdrawal.name}</h4>
@@ -55,7 +55,7 @@ export const Withdrawal = ({withdrawal}) => {
     null
     }
     </Accordion.Toggle>
-    </Card.Header>
+    </Col>
     <Accordion.Collapse eventKey="0">
     <Card.Body className="cardBody">
     <div>
