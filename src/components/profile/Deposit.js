@@ -6,12 +6,12 @@ import Quarter from "./images/Quarter.png"
 import Dime from "./images/Dime.png"
 import Nickel from "./images/Nickel.png"
 import Penny from "./images/Penny.png"
-import Dollar from "./images/Dollar.jpeg"
+import Dollar from "./images/Dollar.png"
 import Five from "./images/Five.jpeg"
-import Ten from "./images/Ten.png"
-import Twenty from "./images/Twenty.png"
-import Fifty from "./images/Fifty.png"
-import Hundred from "./images/Hundred.png"
+import Ten from "./images/Ten.jpeg"
+import Twenty from "./images/Twenty.jpeg"
+import Fifty from "./images/Fifty.jpeg"
+import Hundred from "./images/Hundred.jpeg"
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
@@ -35,8 +35,8 @@ export const Deposit = ({deposit}) => {
     return (
     <>
 <Accordion>
-    <Card.Header>
-    <Accordion.Toggle as={Card.Header} variant="link" eventKey="0">
+    <Col>
+    <Accordion.Toggle as={Col} variant="link" eventKey="0">
     <section className="recentActivityCard">
         <div className="recentColumn">
             <h4 className="depWithName">{deposit.name}</h4>
@@ -57,12 +57,12 @@ export const Deposit = ({deposit}) => {
     null
     }   
     </Accordion.Toggle>
-    </Card.Header>
-    <Accordion.Collapse eventKey="0">
-    <Card.Body className="cardBody">
+    </Col>
     <div>
     {urlPath === "/recent_activity" ?
     <div>
+    <Accordion.Collapse eventKey="0">
+    <Card.Body className="cardBody">
         <Container className="denomBreakdown">
             <Row>
                 <Col>
@@ -152,17 +152,17 @@ export const Deposit = ({deposit}) => {
             </Row>
         </Container>
         <div className="editDeleteButtonDiv">
-            <button className="editButton button2" onClick={() => history.push(`/recent_activity/edit_deposit/${deposit.id}`)}>Edit</button>
+            {/* <button className="editButton button2" onClick={() => history.push(`/recent_activity/edit_deposit/${deposit.id}`)}>Edit</button> */}
             <button className="deleteButton button2" onClick={handleDelete}>Delete</button>
         </div>
+    </Card.Body>
+    </Accordion.Collapse>
     </div>
         :
         null
     }
     </div>
-    </Card.Body>
-    </Accordion.Collapse>
-</Accordion>
+    </Accordion>
     </>
         )
 }

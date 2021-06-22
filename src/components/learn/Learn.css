@@ -1,28 +1,66 @@
+.learnSection {
+    margin: 0 0 60px 0;
+}
+
+.learnRow {
+    padding: 20px 20px;
+}
+
+.learnCardBody {
+    display: flex;
+    margin: 8px 0 0 0;
+    border-left: 3px solid #c7b9fc77;
+    border-right: 3px solid #c7b9fc77;
+    border-radius: 10px;
+}
+
 .learnHeader {
     text-align: center;
+    padding: 0 0 15px 0;
 }
 
 .learnArticle {
-    border: 2px dotted red;
     text-align: center;
 }
 
 .learnCoinImg {
-    width: 35%;
-    margin: 20px 0;
+    width: 30%;
+    max-width: 33%;
+    margin: 20px 5px;
+    transition: transform .5s;
+    cursor: pointer;
+}
+
+.learnCoinImg2 {
+    width: 25%;
+    margin: 0 20px;
+    object-fit: contain;
+}
+
+.learnBillImg2 {
+    width: 40%;
+    margin: 0 20px;
+    object-fit: contain;
 }
 
 .learnBillImg {
     width: 60%;
     padding: 15px 0;
+    cursor: pointer;
 }
 
 .learnCoinImg:hover {
-    transform: scale(1.20);
-    transition: .4s;
+    transform: rotate(360deg)
 }
 
 .learnBillImg:hover {
-    transform: scale(1.0);
-    transition: .4s;
+    transform: scale(1.1);
+    transition: all .4s ease-in-out;
+}
+
+.learnBlurb {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
 }

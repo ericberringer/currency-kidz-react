@@ -8,12 +8,12 @@ import Quarter from "./images/Quarter.png"
 import Dime from "./images/Dime.png"
 import Nickel from "./images/Nickel.png"
 import Penny from "./images/Penny.png"
-import Dollar from "./images/Dollar.jpeg"
+import Dollar from "./images/Dollar.png"
 import Five from "./images/Five.jpeg"
-import Ten from "./images/Ten.png"
-import Twenty from "./images/Twenty.png"
-import Fifty from "./images/Fifty.png"
-import Hundred from "./images/Hundred.png"
+import Ten from "./images/Ten.jpeg"
+import Twenty from "./images/Twenty.jpeg"
+import Fifty from "./images/Fifty.jpeg"
+import Hundred from "./images/Hundred.jpeg"
 import PiggyBank from "./images/PiggyBank.png"
 import { DepositEventContext } from "../deposits/DepositProvider"
 import Image from 'react-bootstrap/Image'
@@ -144,8 +144,11 @@ export const DepositList = () => {
                 <img className="milo image" alt="milo profile" src={Milo}></img>
             </div>
                 <h1>{profile.saver?.user.first_name} has saved ${currentSaved}!!</h1>
+                <h2>How much money would you like to deposit?</h2>
                 <div className="depositHeaderDiv">
-                    <img className="depositPiggy" src={PiggyBank}></img>
+                    <div className="depositPiggyDiv">
+                        <img className="depositPiggy" src={PiggyBank}></img>
+                    </div>
                     <div className="currentDepositDiv">
                         <label htmlFor="name" className="nameInputLabel">Name Me: </label>
                         <input type="text" id="name" defaultValue={newDeposit.name}
@@ -159,7 +162,10 @@ export const DepositList = () => {
                         </div>
                     </div>
             </div>
+            <div className="saveCancelButtonDiv">
                 <button className="saveDepositButton button" onClick={saveDeposit}>Save Deposit</button>
+                <button className="cancelDepositButton button" onClick={() => history.push("/")}>Cancel</button>
+            </div>
             <Carousel className="carousel">
                 <Carousel.Item interval={50000000}>
                         <Image className="currencyImg coinImg" src={Penny} roundedCircle />

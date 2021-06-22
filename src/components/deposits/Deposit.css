@@ -3,23 +3,28 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-    margin: 0 0 70px 0;
+    margin: 0 0 80px 0;
 }
 
 .depositHeaderDiv {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 0 20px 0;
+    margin: 20px 0 20px 0;
+    width: 100%;
 }
 
 .milo {
     width: 30%;
 }
 
+.depositPiggyDiv {
+    width: 80%;
+    margin: 40px 25px 20px 0;
+}
+
 .depositPiggy {
-    width: 40%;
-    margin: 20px 25px 20px 0;
+    width: 60%;
 }
 
 .nameInputLabel {
@@ -30,6 +35,8 @@
 
 .currentDepositDiv {
     margin: 15px 0 15px 0;
+    width: 80%;
+    text-align: left;
 }
 
 .totalDepositDiv {
@@ -41,7 +48,11 @@
     background-color: white;
     padding: 0 10px;
     margin: 0 0 0 3px;
-    width: 40%;
+    width: 32%;
+}
+
+.saveDepositButton {
+  margin: 5px 20px 15px 0;
 }
 
 .carousel {
@@ -57,7 +68,7 @@
 }
 
 .billImg {
-    width: 65%;
+    width: 44%;
 }
 
 .currencyImg {
