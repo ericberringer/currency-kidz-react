@@ -6,13 +6,12 @@ import { Withdrawal } from "./Withdrawal"
 import PigPlus from "../profile/PigPlus.png"
 import PigMinus from "../profile/PigMinus.png"
 import Milo from "../profile/Milo.png"
-// import ""./Profile.css""
+import "./Profile.css"
 import { DepositEventContext } from "../deposits/DepositProvider"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
-import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -24,7 +23,7 @@ export const ProfileList = () => {
     const { getWithdrawals, withdrawal_events } = useContext(WithdrawalEventContext)
 
     const [ currency, setCurrency ] = useState([])
-    console.log(currency)
+    // console.log(currency)
     const [ allDepositEvents, setAllDepositEvents ] = useState([])
     const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
     const [ goalAmount, setGoalAmount ] = useState({

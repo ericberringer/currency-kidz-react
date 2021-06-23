@@ -16,8 +16,6 @@ export const RecentActivityList = () => {
     const [ allDepositEvents, setAllDepositEvents ] = useState([])
     const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
 
-    const history = useHistory()
-
     useEffect(() => {
         getProfile()
         .then(getDeposits)

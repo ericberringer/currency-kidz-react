@@ -1,4 +1,3 @@
-import TryAgain from "./images/TryAgain.png"
 import QuarterQuestion from "./images/QuarterQuestion.png"
 import Washington from "./images/WashingtonQuestion.png"
 import Lincoln from "./images/AbrahamLincolnQuestion.png"

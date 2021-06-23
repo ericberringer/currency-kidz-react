@@ -26,7 +26,6 @@ import Row from 'react-bootstrap/Row'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
 import './Learn.css'
 import React, { useContext, useEffect } from "react"
 import { useHistory } from 'react-router-dom'

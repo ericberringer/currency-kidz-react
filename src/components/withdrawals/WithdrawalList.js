@@ -16,7 +16,6 @@ import PiggyBank from "./images/PiggyBank.png"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 import Image from 'react-bootstrap/Image'
 import Carousel from 'react-bootstrap/Carousel'
-// import "./Withdrawal.css"
 
 export const WithdrawalList = () => {
 
