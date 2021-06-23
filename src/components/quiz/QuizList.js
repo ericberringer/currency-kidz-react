@@ -8,6 +8,17 @@ import TryAgain from "./images/TryAgain.png"
 import Nice from "./images/Nice.png"
 import UhOh from "./images/UhOh.png"
 import Question from "./images/QuestionMark.png"
+import QuarterQuestion from "./images/QuarterQuestion.png"
+import Washington from "./images/WashingtonQuestion.png"
+import Lincoln from "./images/AbrahamLincolnQuestion.png"
+import Bob from "./images/BobDeclaration.png"
+import Benjamin from "./images/BenjaminAnswer.png"
+import AbrahamAnswer from "./images/AbrahamAnswer.png"
+import WashingtonAnswer from "./images/WashingtonAnswer.png"
+import WashingtonAnswer2 from "./images/WashingtonAnswer2.png"
+import GrantAnswer from "./images/GrantAnswer.png"
+import Grant from "./images/Grant.png"
+import Borat from "./images/Borat.gif"
 import Milo from './images/Milo.png'
 import './Quiz.css'
 import React, { useState } from "react"
@@ -18,11 +29,11 @@ export const QuizList = () => {
     const history = useHistory()
 
     const [ questionImg, setQuestionImg ] = useState({
-        question1: Question,
-        question2: Question,
-        question3: Question,
-        question4: Question,
-        question5: Question
+        question1: QuarterQuestion,
+        question2: Grant,
+        question3: Washington,
+        question4: Lincoln,
+        question5: Bob
     })
 
     const [ correctAnswer, setCorrectAnswer ] = useState({
@@ -42,11 +53,11 @@ export const QuizList = () => {
     })
 
     const correctObject = {
-        question1: Great,
-        question2: Nice,
-        question3: Quarter,
-        question4: Dime,
-        question5: Milo
+        question1: WashingtonAnswer2,
+        question2: GrantAnswer,
+        question3: WashingtonAnswer,
+        question4: AbrahamAnswer,
+        question5: Benjamin
     }
 
     const incorrectObject = {
@@ -153,7 +164,7 @@ export const QuizList = () => {
                     </article>
                     <div className="quizImgDiv">
                         <img className="correctImg questionImg" src={questionImg.question3}></img>
-                        <img className="answerImg correctImg" src={correctAnswer.question3}></img>
+                        <img className="answerImg correctImg questionImg3" src={correctAnswer.question3}></img>
                         <img className="answerImg incorrectImg" src={incorrectAnswer.question3}></img>
                     </div>
                 </fieldset>
