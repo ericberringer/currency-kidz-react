@@ -216,7 +216,7 @@ export const LearnList = () => {
                             <Card.Body className="learnCardBody">
                                 <Image className="learnBillImg2" alt="money" src={Hundred2} />
                                 <div className="learnBlurb">
-                                <h5>The United States one-hundred-dollar bill is worth $100. It features the face of Benjamen Franklin, one of America's 8 Founding Fathers. He helped draft the Decleration of Independence and U.S. Constitution.</h5>
+                                <h5>The United States one-hundred-dollar bill is worth $100. It features the face of Benjamin Franklin, one of America's 8 Founding Fathers. He helped draft the Decleration of Independence and U.S. Constitution.</h5>
                                 </div>
                             </Card.Body>
                         </Accordion.Collapse>

@@ -1,51 +1,27 @@
 import Quarter from "./images/Quarter.png"
-import Quarter2 from "./images/Quarter2.png"
 import Dime from "./images/Dime.png"
-import Dime2 from "./images/Dime2.png"
 import Nickel from "./images/Nickel.png"
-import Nickel2 from "./images/Nickel2.png"
-import Penny from "./images/Penny.png"
-import Penny2 from "./images/Penny2.png"
 import Dollar from "./images/Dollar.png"
-import Dollar2 from "./images/Dollar2.jpeg"
-import Five from "./images/Five.jpeg"
-import Five2 from "./images/Five2.jpeg"
-import Ten from "./images/Ten.jpeg"
-import Ten2 from "./images/Ten2.jpeg"
-import Twenty from "./images/Twenty.jpeg"
-import Twenty2 from "./images/Twenty2.jpeg"
-import Fifty from "./images/Fifty.jpeg"
-import Fifty2 from "./images/Fifty2.jpeg"
 import Hundred from "./images/Hundred.jpeg"
-import Hundred2 from "./images/Hundred2.jpeg"
-import PiggyBank from "./images/PiggyBank.png"
 import Great from "./images/GreatJob.png"
 import TryAgain from "./images/TryAgain.png"
 import Nice from "./images/Nice.png"
 import UhOh from "./images/UhOh.png"
-import Image from 'react-bootstrap/Image'
 import Milo from './images/Milo.png'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Accordion from 'react-bootstrap/Accordion'
-import Card from 'react-bootstrap/Card'
-import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
 import './Quiz.css'
 import React, { useContext, useEffect, useState } from "react"
 import { useHistory } from 'react-router-dom'
 
 export const QuizList = () => {
 
+    const history = useHistory()
+
     const [ correctAnswer, setCorrectAnswer ] = useState({
         question1: "",
         question2: "",
         question3: "",
         question4: "",
-        question5: "",
-        question6: "",
-        question7: "",
-        question8: ""
+        question5: ""
     })
 
     const [ incorrectAnswer, setIncorrectAnswer ] = useState({
@@ -53,10 +29,7 @@ export const QuizList = () => {
         question2: "",
         question3: "",
         question4: "",
-        question5: "",
-        question6: "",
-        question7: "",
-        question8: ""
+        question5: ""
     })
 
     const correctObject = {
@@ -64,10 +37,7 @@ export const QuizList = () => {
         question2: Nice,
         question3: Quarter,
         question4: Dime,
-        question5: Nickel,
-        question6: Penny,
-        question7: Dollar,
-        question8: Fifty,
+        question5: Milo
     }
 
     const incorrectObject = {
@@ -75,10 +45,7 @@ export const QuizList = () => {
         question2: UhOh,
         question3: Hundred,
         question4: Dollar,
-        question5: Nickel,
-        question6: Penny,
-        question7: Dollar,
-        question8: Fifty,
+        question5: Nickel
     }
 
 
@@ -103,7 +70,7 @@ export const QuizList = () => {
     
     return (
         <section className="quizSection">
-            <h1>Let's Put Your Knowledge To The Test!!</h1>
+            <h1 className="quizTitle">Let's Put Your Knowledge To The Test!!</h1>
             <form className="quizForm">
                 <fieldset className="question" id="question1">
                     <article className="questionArticle">
@@ -155,7 +122,75 @@ export const QuizList = () => {
                         <img className="answerImg incorrectImg" src={incorrectAnswer.question2}></img>
                     </div>
                 </fieldset>
+                <fieldset className="question" id="question3">
+                    <article className="questionArticle">
+                        <h2>George Washington was America's 1st president?</h2>
+                        <div>
+                            <input id="correct" name="question3" type="radio" value={correctAnswer.question3} onClick={handleMultipleChoice}></input>
+                            <label htmlFor="option1">True</label>
+                        </div>
+                        <div>
+                            <input id="incorrect" name="question3" type="radio" value={incorrectAnswer.question3} onClick={handleMultipleChoice}></input>
+                            <label htmlFor="option2">False</label>
+                        </div>
+                    </article>
+                    <div className="quizImgDiv">
+                        <img className="answerImg correctImg" src={correctAnswer.question3}></img>
+                        <img className="answerImg incorrectImg" src={incorrectAnswer.question3}></img>
+                    </div>
+                </fieldset>
+                <fieldset className="question" id="question4">
+                    <article className="questionArticle">
+                        <h2>Which coin is Abraham Lincoln on?</h2>
+                        <div>
+                            <input id="incorrect" name="question4" type="radio" value={incorrectAnswer.question4} onClick={handleMultipleChoice}></input>
+                            <label htmlFor="option1">Dime</label>
+                        </div>
+                        <div>
+                            <input id="correct" name="question4" type="radio" value={correctAnswer.question4} onClick={handleMultipleChoice}></input>
+                            <label htmlFor="option2">Penny</label>
+                        </div>
+                        <div>
+                            <input id="incorrect" name="question4" type="radio" value={incorrectAnswer.question4} onClick={handleMultipleChoice}></input>
+                            <label htmlFor="option4">Sacagawea Dollar</label>
+                        </div>
+                        <div>
+                            <input id="incorrect" name="question4" type="radio" value={incorrectAnswer.question4} onClick={handleMultipleChoice}></input>
+                            <label htmlFor="option3">Bicentennial Quarter</label>
+                        </div>
+                    </article>
+                    <div className="quizImgDiv">
+                        <img className="answerImg correctImg" src={correctAnswer.question4}></img>
+                        <img className="answerImg incorrectImg" src={incorrectAnswer.question4}></img>
+                    </div>
+                </fieldset>
+                <fieldset className="question" id="question5">
+                    <article className="questionArticle">
+                        <h2>Which person helped draft the Declaration of Independence?</h2>
+                        <div>
+                            <input id="correct" name="question5" type="radio" value={correctAnswer.question5} onClick={handleMultipleChoice}></input>
+                            <label htmlFor="option1">Benjamin Franklin</label>
+                        </div>
+                        <div>
+                            <input id="incorrect" name="question5" type="radio" value={incorrectAnswer.question5} onClick={handleMultipleChoice}></input>
+                            <label htmlFor="option2">Abraham Lincoln</label>
+                        </div>
+                        <div>
+                            <input id="incorrect" name="question5" type="radio" value={incorrectAnswer.question5} onClick={handleMultipleChoice}></input>
+                            <label htmlFor="option4">Alexander Hamilton</label>
+                        </div>
+                        <div>
+                            <input id="incorrect" name="question5" type="radio" value={incorrectAnswer.question5} onClick={handleMultipleChoice}></input>
+                            <label htmlFor="option3">Richard Pryor</label>
+                        </div>
+                    </article>
+                    <div className="quizImgDiv">
+                        <img className="answerImg correctImg" src={correctAnswer.question5}></img>
+                        <img className="answerImg incorrectImg" src={incorrectAnswer.question5}></img>
+                    </div>
+                </fieldset>
             </form>
+            <button className="button" onClick={() => history.push("/")}>Return to Home</button>
         </section>
     )
 }

@@ -2,6 +2,12 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin: 0 0 60px 0;
+}
+
+.quizTitle {
+    text-decoration: underline;
+    margin: 0 0 35px 0;
 }
 
 .quizForm {
@@ -12,13 +18,17 @@
 .question {
     display: flex;
     justify-content: center;
-    margin: 0 0 50px 100px;
+    margin: 0 0 75px 100px;
     width: 100%;
+}
+
+.questionArticle {
+    width: 40%;
 }
 
 label {
     font-weight: 500;
-    font-size: 1.25em;
+    font-size: 1.4em;
     padding: 5px;
     margin: 0 0 0 10px;
 }
@@ -29,11 +39,11 @@ label {
 }
 
 .correctImg {
-    width: 40%;
+    width: 30%;
 }
 
 .incorrectImg {
-    width: 60%;
+    width: 50%;
     margin: 50px;
 }
 
