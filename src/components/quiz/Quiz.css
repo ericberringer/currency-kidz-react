@@ -25,7 +25,9 @@
 
 .questionArticle {
     width: 40%;
-    padding: 20px 0;
+    padding: 20px;
+    background-color: #c7b9fc77;
+    border-radius: 10px;
 }
 
 label {

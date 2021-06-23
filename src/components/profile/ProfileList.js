@@ -10,6 +10,12 @@ import Milo from "../profile/Milo.png"
 import { DepositEventContext } from "../deposits/DepositProvider"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
+import Image from 'react-bootstrap/Image'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 export const ProfileList = () => {
 
@@ -17,12 +23,14 @@ export const ProfileList = () => {
     const { getDeposits, deposit_events } = useContext(DepositEventContext)
     const { getWithdrawals, withdrawal_events } = useContext(WithdrawalEventContext)
 
+    const [ currency, setCurrency ] = useState([])
+    console.log(currency)
     const [ allDepositEvents, setAllDepositEvents ] = useState([])
     const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
     const [ goalAmount, setGoalAmount ] = useState({
         amount: 0
     })
-    console.log("goal Amount" + goalAmount.amount)
+    // console.log("goal Amount" + goalAmount.amount)
     
     const history = useHistory()
 
@@ -53,6 +61,8 @@ export const ProfileList = () => {
         setAllDepositEvents(allDeposits)
         const allWithdrawals = withdrawal_events.filter(dep => dep.total > 0)
         setAllWithdrawalEvents(allWithdrawals)
+        const allCurrency = deposit_events.map(dep => dep.currency)
+        setCurrency(allCurrency)
     }, [deposit_events, withdrawal_events])
 
     // let audio = new Audio("")
@@ -65,7 +75,7 @@ export const ProfileList = () => {
     
     let progressMath = (currentSaved / saverGoalAmount) * 100
     let percent = parseFloat(progressMath.toFixed(2))
-    console.log(percent)
+    // console.log(percent)
 
 
 
@@ -109,6 +119,53 @@ export const ProfileList = () => {
                     </div>      
                 </article>
                 }
+                <div>
+                    <Accordion>
+                        <Col>
+                            <Accordion.Toggle as={Col} variant="link" eventKey="0">
+                                <section>
+                                    <h2>Denomination Breakdown</h2>
+                                    <div className="moreButtonDiv">
+                                        <h7 className="accordionButton down"></h7>
+                                        <h7>More</h7>
+                                    </div>
+                                </section>
+                            </Accordion.Toggle>
+                        </Col>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>
+                                <Container>
+                                    <Row>
+                                        <Col>
+                                        </Col>
+                                        <Col>
+                                        </Col>
+                                        <Col>
+                                        </Col>
+                                        <Col>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                        </Col>
+                                        <Col>
+                                        </Col>
+                                        <Col>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                        </Col>
+                                        <Col>
+                                        </Col>
+                                        <Col>
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Accordion>
+                </div>
                 <img className="piggyBank image" alt="piggy bank deposit" src={PigPlus}
                     onClick={() => history.push("/create/deposit_event")
                         // audio.play()
