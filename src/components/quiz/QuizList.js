@@ -1,4 +1,3 @@
-import TryAgain from "./images/TryAgain.png"
 import QuarterQuestion from "./images/QuarterQuestion.png"
 import Washington from "./images/WashingtonQuestion.png"
 import Lincoln from "./images/AbrahamLincolnQuestion.png"
@@ -109,9 +108,9 @@ export const QuizList = () => {
                         </div>
                     </article>
                     <div className="quizImgDiv">
-                        <img className="correctImg questionImg" src={questionImg.question1}></img>
-                        <img className="answerImg correctImg" src={correctAnswer.question1}></img>
-                        <img className="answerImg incorrectImg fade-out" src={incorrectAnswer.question1}></img>
+                        <img className="quizImage correctImg questionImg" src={questionImg.question1}></img>
+                        <img className="quizImage answerImg correctImg correctImg1" src={correctAnswer.question1}></img>
+                        <img className="quizImage answerImg incorrectImg fade-out" src={incorrectAnswer.question1}></img>
                     </div>
                 </fieldset>
                 <fieldset className="question" id="question2">
@@ -135,9 +134,9 @@ export const QuizList = () => {
                         </div>
                     </article>
                     <div className="quizImgDiv">
-                        <img className="correctImg questionImg" src={questionImg.question2}></img>
-                        <img className="answerImg correctImg" src={correctAnswer.question2}></img>
-                        <img className="answerImg incorrectImg" src={incorrectAnswer.question2}></img>
+                        <img className="quizImage correctImg questionImg" src={questionImg.question2}></img>
+                        <img className="quizImage answerImg correctImg correctImg2" src={correctAnswer.question2}></img>
+                        <img className="quizImage answerImg incorrectImg" src={incorrectAnswer.question2}></img>
                     </div>
                 </fieldset>
                 <fieldset className="question" id="question3">
@@ -153,9 +152,9 @@ export const QuizList = () => {
                         </div>
                     </article>
                     <div className="quizImgDiv">
-                        <img className="correctImg questionImg" src={questionImg.question3}></img>
-                        <img className="answerImg correctImg questionImg3" src={correctAnswer.question3}></img>
-                        <img className="answerImg incorrectImg" src={incorrectAnswer.question3}></img>
+                        <img className="quizImage correctImg questionImg" src={questionImg.question3}></img>
+                        <img className="quizImage answerImg correctImg correctImg3" src={correctAnswer.question3}></img>
+                        <img className="quizImage answerImg incorrectImg" src={incorrectAnswer.question3}></img>
                     </div>
                 </fieldset>
                 <fieldset className="question" id="question4">
@@ -179,9 +178,9 @@ export const QuizList = () => {
                         </div>
                     </article>
                     <div className="quizImgDiv">
-                        <img className="correctImg questionImg" src={questionImg.question4}></img>
-                        <img className="answerImg correctImg" src={correctAnswer.question4}></img>
-                        <img className="answerImg incorrectImg" src={incorrectAnswer.question4}></img>
+                        <img className="quizImage correctImg questionImg" src={questionImg.question4}></img>
+                        <img className="quizImage answerImg correctImg" src={correctAnswer.question4}></img>
+                        <img className="quizImage answerImg incorrectImg" src={incorrectAnswer.question4}></img>
                     </div>
                 </fieldset>
                 <fieldset className="question" id="question5">
@@ -205,9 +204,9 @@ export const QuizList = () => {
                         </div>
                     </article>
                     <div className="quizImgDiv">
-                        <img className="correctImg questionImg" src={questionImg.question5}></img>
-                        <img className="answerImg correctImg" src={correctAnswer.question5}></img>
-                        <img className="answerImg incorrectImg" src={incorrectAnswer.question5}></img>
+                        <img className="quizImage correctImg questionImg" src={questionImg.question5}></img>
+                        <img className="quizImage answerImg correctImg" src={correctAnswer.question5}></img>
+                        <img className="quizImage answerImg incorrectImg" src={incorrectAnswer.question5}></img>
                     </div>
                 </fieldset>
             </form>
