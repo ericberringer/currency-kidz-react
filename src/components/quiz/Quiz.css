@@ -33,6 +33,10 @@ label {
     margin: 0 0 0 10px;
 }
 
+input {
+    cursor: pointer;
+}
+
 .quizImgDiv {
     width: 60%;
     text-align: center;

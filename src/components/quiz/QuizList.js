@@ -7,14 +7,23 @@ import Great from "./images/GreatJob.png"
 import TryAgain from "./images/TryAgain.png"
 import Nice from "./images/Nice.png"
 import UhOh from "./images/UhOh.png"
+import Question from "./images/QuestionMark.png"
 import Milo from './images/Milo.png'
 import './Quiz.css'
-import React, { useContext, useEffect, useState } from "react"
+import React, { useState } from "react"
 import { useHistory } from 'react-router-dom'
 
 export const QuizList = () => {
 
     const history = useHistory()
+
+    const [ questionImg, setQuestionImg ] = useState({
+        question1: Question,
+        question2: Question,
+        question3: Question,
+        question4: Question,
+        question5: Question
+    })
 
     const [ correctAnswer, setCorrectAnswer ] = useState({
         question1: "",
@@ -53,15 +62,21 @@ export const QuizList = () => {
         if (event.target.id === "correct"){
             const correctState = { ...correctAnswer }
             const incorrectState = { ...incorrectAnswer }
+            const questionState = { ...questionImg }
             correctState[event.target.name] = correctObject[event.target.name]
             incorrectState[event.target.name] = ""
+            questionState[event.target.name] = ""
+            setQuestionImg(questionState)
             setIncorrectAnswer(incorrectState)
             setCorrectAnswer(correctState)
         } else {
             const incorrectState = { ...incorrectAnswer }
             const correctState = { ...correctAnswer }
+            const questionState = { ...questionImg }
             incorrectState[event.target.name] = incorrectObject[event.target.name]
             correctState[event.target.name] = ""
+            questionState[event.target.name] = ""
+            setQuestionImg(questionState)
             setCorrectAnswer(correctState)
             setIncorrectAnswer(incorrectState)
         }
@@ -93,6 +108,7 @@ export const QuizList = () => {
                         </div>
                     </article>
                     <div className="quizImgDiv">
+                        <img className="correctImg questionImg" src={questionImg.question1}></img>
                         <img className="answerImg correctImg" src={correctAnswer.question1}></img>
                         <img className="answerImg incorrectImg fade-out" src={incorrectAnswer.question1}></img>
                     </div>
@@ -118,6 +134,7 @@ export const QuizList = () => {
                         </div>
                     </article>
                     <div className="quizImgDiv">
+                        <img className="correctImg questionImg" src={questionImg.question2}></img>
                         <img className="answerImg correctImg" src={correctAnswer.question2}></img>
                         <img className="answerImg incorrectImg" src={incorrectAnswer.question2}></img>
                     </div>
@@ -135,6 +152,7 @@ export const QuizList = () => {
                         </div>
                     </article>
                     <div className="quizImgDiv">
+                        <img className="correctImg questionImg" src={questionImg.question3}></img>
                         <img className="answerImg correctImg" src={correctAnswer.question3}></img>
                         <img className="answerImg incorrectImg" src={incorrectAnswer.question3}></img>
                     </div>
@@ -160,6 +178,7 @@ export const QuizList = () => {
                         </div>
                     </article>
                     <div className="quizImgDiv">
+                        <img className="correctImg questionImg" src={questionImg.question4}></img>
                         <img className="answerImg correctImg" src={correctAnswer.question4}></img>
                         <img className="answerImg incorrectImg" src={incorrectAnswer.question4}></img>
                     </div>
@@ -185,6 +204,7 @@ export const QuizList = () => {
                         </div>
                     </article>
                     <div className="quizImgDiv">
+                        <img className="correctImg questionImg" src={questionImg.question5}></img>
                         <img className="answerImg correctImg" src={correctAnswer.question5}></img>
                         <img className="answerImg incorrectImg" src={incorrectAnswer.question5}></img>
                     </div>
