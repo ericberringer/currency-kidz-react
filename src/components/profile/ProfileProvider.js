@@ -16,9 +16,30 @@ export const ProfileProvider = (props) =>{
           .then(setProfile)
     }
 
+    const getProfileById = (saverId) => {
+        return fetch(`http://localhost:8000/profile/${saverId}`, {
+            headers:{
+                "Authorization": `Token ${localStorage.getItem("ck_user_token")}`
+            }
+        })
+        .then(res => res.json())
+    }
+
+    const updateProfile = saver => {
+        return fetch(`http://localhost:8000/profile/${saver.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("ck_user_id")}`
+          },
+          body: JSON.stringify(saver)
+        })
+          .then(getProfile)
+      }
+
     return (
       <ProfileContext.Provider value={{
-          profile, getProfile
+          profile, getProfile, updateProfile, getProfileById
       }}>
           {props.children}
       </ProfileContext.Provider>

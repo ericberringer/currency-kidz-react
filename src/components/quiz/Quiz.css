@@ -13,6 +13,7 @@
 .quizForm {
     margin: 40px 0 0 0;
     width: 100%;
+    padding: 0 0 0 20px;
 }
 
 .question {
@@ -24,6 +25,7 @@
 
 .questionArticle {
     width: 40%;
+    padding: 20px 0;
 }
 
 label {
@@ -46,8 +48,22 @@ input {
     width: 30%;
 }
 
+.correctImg1 {
+    margin: 30px 20px 30px 40px;
+    width: 35%;
+}
+
+.correctImg2 {
+    width: 26%;
+}
+
+.correctImg3 {
+    width: 35%;
+    margin: 30px 0;
+}
+
 .incorrectImg {
     width: 50%;
-    margin: 50px;
+    margin: 30px 40px 30px 30px;
 }
 

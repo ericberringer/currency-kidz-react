@@ -9,17 +9,38 @@ import Milo from "../profile/Milo.png"
 // import ""./Profile.css""
 import { DepositEventContext } from "../deposits/DepositProvider"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 export const ProfileList = () => {
 
-    const { getProfile, profile } = useContext(ProfileContext)
+    const { getProfile, profile, updateProfile, getProfileById } = useContext(ProfileContext)
     const { getDeposits, deposit_events } = useContext(DepositEventContext)
     const { getWithdrawals, withdrawal_events } = useContext(WithdrawalEventContext)
-    
+
     const [ allDepositEvents, setAllDepositEvents ] = useState([])
     const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
+    const [ goalAmount, setGoalAmount ] = useState({
+        amount: 0
+    })
+    console.log("goal Amount" + goalAmount.amount)
     
     const history = useHistory()
+
+    const handleSaveGoalAmount = () => {
+        updateProfile({
+            id: profile.saver.id,
+            user: profile.saver.user,
+            profile_image_url: profile.saver.profile_image_url,
+            created_on: profile.saver.created_on,
+            goal_amount: parseFloat(goalAmount.amount)
+        })
+    }
+
+    const handleControlledInputChange = (event) => {
+        const newAmountState = { ...goalAmount }
+        newAmountState[event.target.name] = event.target.value
+        setGoalAmount(newAmountState)
+    }
     
     useEffect(() => {
         getProfile()
@@ -40,6 +61,13 @@ export const ProfileList = () => {
     let totalDeposits = profile?.deposit_events?.reduce((total, event) => total+parseFloat(event.total), 0)
     let currentSaved = totalDeposits - totalWithdrawals
 
+    const saverGoalAmount = parseFloat(profile?.saver?.goal_amount)
+    
+    let progressMath = (currentSaved / saverGoalAmount) * 100
+    let percent = parseFloat(progressMath.toFixed(2))
+    console.log(percent)
+
+
 
     return (
         <div className="profileList">
@@ -49,7 +77,38 @@ export const ProfileList = () => {
             </div>
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
-                <h2>You have saved ${currentSaved}!!</h2>
+                {saverGoalAmount === 0 ?
+                <>
+                <div className="goalAmountDiv">
+                    <form className="goalAmountForm">
+                        <fieldset className="goalAmountFieldset">
+                            <label htmlFor="goalAmount" className="goalLabel">Let's Set A Savings Goal: $</label>
+                            <input id="goalAmount" type="number"
+                                    name="amount" placeholder="0.00"
+                                    required autoFocus
+                                    onChange={handleControlledInputChange}
+                                    ></input>
+                        </fieldset>
+                    </form>
+                </div>
+                <div>
+                    <button className="button goalAmountButton" onClick={handleSaveGoalAmount}>Set Goal</button>
+                </div>
+                </>
+                :
+                <article className="progressArticle">
+                    <div>
+                        <h3>You're Goal Progress</h3>
+                    </div>
+                    <div className="progressBarDiv">
+                        <h2>${currentSaved}</h2>
+                        <div className="progressBar">
+                            <ProgressBar animated now={45} variant="info" now={percent} label={`${percent}%`} max="100"/>
+                        </div>
+                        <h2>${saverGoalAmount}</h2>
+                    </div>      
+                </article>
+                }
                 <img className="piggyBank image" alt="piggy bank deposit" src={PigPlus}
                     onClick={() => history.push("/create/deposit_event")
                         // audio.play()
