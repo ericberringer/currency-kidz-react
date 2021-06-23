@@ -1,13 +1,4 @@
-import Quarter from "./images/Quarter.png"
-import Dime from "./images/Dime.png"
-import Nickel from "./images/Nickel.png"
-import Dollar from "./images/Dollar.png"
-import Hundred from "./images/Hundred.jpeg"
-import Great from "./images/GreatJob.png"
 import TryAgain from "./images/TryAgain.png"
-import Nice from "./images/Nice.png"
-import UhOh from "./images/UhOh.png"
-import Question from "./images/QuestionMark.png"
 import QuarterQuestion from "./images/QuarterQuestion.png"
 import Washington from "./images/WashingtonQuestion.png"
 import Lincoln from "./images/AbrahamLincolnQuestion.png"
@@ -17,9 +8,8 @@ import AbrahamAnswer from "./images/AbrahamAnswer.png"
 import WashingtonAnswer from "./images/WashingtonAnswer.png"
 import WashingtonAnswer2 from "./images/WashingtonAnswer2.png"
 import GrantAnswer from "./images/GrantAnswer.png"
+import UncleSam from "./images/UncleSamTry.png"
 import Grant from "./images/Grant.png"
-import Borat from "./images/Borat.gif"
-import Milo from './images/Milo.png'
 import './Quiz.css'
 import React, { useState } from "react"
 import { useHistory } from 'react-router-dom'
@@ -61,11 +51,11 @@ export const QuizList = () => {
     }
 
     const incorrectObject = {
-        question1: TryAgain,
-        question2: UhOh,
-        question3: Hundred,
-        question4: Dollar,
-        question5: Nickel
+        question1: UncleSam,
+        question2: UncleSam,
+        question3: UncleSam,
+        question4: UncleSam,
+        question5: UncleSam
     }
 
 
