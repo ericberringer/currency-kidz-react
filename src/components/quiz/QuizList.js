@@ -1,14 +1,15 @@
-import Quarter from "./images/Quarter.png"
-import Dime from "./images/Dime.png"
-import Nickel from "./images/Nickel.png"
-import Dollar from "./images/Dollar.png"
-import Hundred from "./images/Hundred.jpeg"
-import Great from "./images/GreatJob.png"
 import TryAgain from "./images/TryAgain.png"
-import Nice from "./images/Nice.png"
-import UhOh from "./images/UhOh.png"
-import Question from "./images/QuestionMark.png"
-import Milo from './images/Milo.png'
+import QuarterQuestion from "./images/QuarterQuestion.png"
+import Washington from "./images/WashingtonQuestion.png"
+import Lincoln from "./images/AbrahamLincolnQuestion.png"
+import Bob from "./images/BobDeclaration.png"
+import Benjamin from "./images/BenjaminAnswer.png"
+import AbrahamAnswer from "./images/AbrahamAnswer.png"
+import WashingtonAnswer from "./images/WashingtonAnswer.png"
+import WashingtonAnswer2 from "./images/WashingtonAnswer2.png"
+import GrantAnswer from "./images/GrantAnswer.png"
+import UncleSam from "./images/UncleSamTry.png"
+import Grant from "./images/Grant.png"
 import './Quiz.css'
 import React, { useState } from "react"
 import { useHistory } from 'react-router-dom'
@@ -18,11 +19,11 @@ export const QuizList = () => {
     const history = useHistory()
 
     const [ questionImg, setQuestionImg ] = useState({
-        question1: Question,
-        question2: Question,
-        question3: Question,
-        question4: Question,
-        question5: Question
+        question1: QuarterQuestion,
+        question2: Grant,
+        question3: Washington,
+        question4: Lincoln,
+        question5: Bob
     })
 
     const [ correctAnswer, setCorrectAnswer ] = useState({
@@ -42,19 +43,19 @@ export const QuizList = () => {
     })
 
     const correctObject = {
-        question1: Great,
-        question2: Nice,
-        question3: Quarter,
-        question4: Dime,
-        question5: Milo
+        question1: WashingtonAnswer2,
+        question2: GrantAnswer,
+        question3: WashingtonAnswer,
+        question4: AbrahamAnswer,
+        question5: Benjamin
     }
 
     const incorrectObject = {
-        question1: TryAgain,
-        question2: UhOh,
-        question3: Hundred,
-        question4: Dollar,
-        question5: Nickel
+        question1: UncleSam,
+        question2: UncleSam,
+        question3: UncleSam,
+        question4: UncleSam,
+        question5: UncleSam
     }
 
 
@@ -153,7 +154,7 @@ export const QuizList = () => {
                     </article>
                     <div className="quizImgDiv">
                         <img className="correctImg questionImg" src={questionImg.question3}></img>
-                        <img className="answerImg correctImg" src={correctAnswer.question3}></img>
+                        <img className="answerImg correctImg questionImg3" src={correctAnswer.question3}></img>
                         <img className="answerImg incorrectImg" src={incorrectAnswer.question3}></img>
                     </div>
                 </fieldset>
