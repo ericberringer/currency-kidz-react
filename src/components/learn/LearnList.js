@@ -29,11 +29,14 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import './Learn.css'
 import React, { useContext, useEffect } from "react"
+import { useHistory } from 'react-router-dom'
 import { ProfileContext } from "../profile/ProfileProvider"
 
 export const LearnList = () => {
 
     const  { getProfile, profile } = useContext(ProfileContext)
+
+    const history = useHistory()
 
     useEffect(() => {
         getProfile()
@@ -213,7 +216,7 @@ export const LearnList = () => {
                             <Card.Body className="learnCardBody">
                                 <Image className="learnBillImg2" alt="money" src={Hundred2} />
                                 <div className="learnBlurb">
-                                <h5>The United States one-hundred-dollar bill is worth $100. It features the face of Benjamen Franklin, one of America's 8 Founding Fathers. He helped draft the Decleration of Independence and U.S. Constitution.</h5>
+                                <h5>The United States one-hundred-dollar bill is worth $100. It features the face of Benjamin Franklin, one of America's 8 Founding Fathers. He helped draft the Decleration of Independence and U.S. Constitution.</h5>
                                 </div>
                             </Card.Body>
                         </Accordion.Collapse>
@@ -222,6 +225,11 @@ export const LearnList = () => {
                 </Row>
                 </article>
             </Container>
+            <article className="quizPiggyArticle" onClick={() => history.push("/quiz")}>
+                <h6>QUIZ</h6>
+                <Image className="quizPiggy" alt="piggy bank" src={PiggyBank} />
+                <h6>LET'S SEE WHAT WE LEARNED!!</h6>
+            </article>
         </section>
         </>
     )

@@ -10,6 +10,7 @@ import { RecentActivityList } from "./recentactivity/RecentActivityList"
 import { DepositList } from "./deposits/DepositList"
 import { WithdrawalList } from "./withdrawals/WithdrawalList"
 import { LearnList } from "./learn/LearnList"
+import { QuizList } from "./quiz/QuizList"
 
 
 export const ApplicationViews = () => {
@@ -92,5 +93,18 @@ export const ApplicationViews = () => {
         </ProfileProvider>
 
         {/* Quiz Area */}
+
+        <ProfileProvider>
+            <DepositProvider>
+                <WithdrawalProvider>
+
+                <Route exact path="/quiz">
+                    <QuizList />
+                </Route>
+
+                </WithdrawalProvider>
+            </DepositProvider>
+        </ProfileProvider>
+
     </>
     )}

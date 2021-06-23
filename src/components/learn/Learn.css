@@ -64,3 +64,18 @@
     justify-content: center;
     text-align: left;
 }
+
+.quizPiggyArticle {
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0 0 0;
+    cursor: pointer;
+    padding: 20px 0 10px 0;
+    margin: 25px 70px 0 70px;
+    background-color: #c7b9fc77;
+}
+
+.quizPiggy {
+    width: 10%;
+    margin: 0 0 10px 0;
+}
