@@ -1,0 +1,39 @@
+.quizSection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quizForm {
+    margin: 40px 0 0 0;
+    width: 100%;
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 50px 100px;
+    width: 100%;
+}
+
+label {
+    font-weight: 500;
+    font-size: 1.25em;
+    padding: 5px;
+    margin: 0 0 0 10px;
+}
+
+.quizImgDiv {
+    width: 60%;
+    text-align: center;
+}
+
+.correctImg {
+    width: 40%;
+}
+
+.incorrectImg {
+    width: 60%;
+    margin: 50px;
+}
+

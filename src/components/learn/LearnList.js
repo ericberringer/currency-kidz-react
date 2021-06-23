@@ -29,11 +29,14 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import './Learn.css'
 import React, { useContext, useEffect } from "react"
+import { useHistory } from 'react-router-dom'
 import { ProfileContext } from "../profile/ProfileProvider"
 
 export const LearnList = () => {
 
     const  { getProfile, profile } = useContext(ProfileContext)
+
+    const history = useHistory()
 
     useEffect(() => {
         getProfile()
@@ -222,6 +225,11 @@ export const LearnList = () => {
                 </Row>
                 </article>
             </Container>
+            <article className="quizPiggyArticle" onClick={() => history.push("/quiz")}>
+                <h6>QUIZ</h6>
+                <Image className="quizPiggy" alt="piggy bank" src={PiggyBank} />
+                <h6>LET'S SEE WHAT WE LEARNED!!</h6>
+            </article>
         </section>
         </>
     )
