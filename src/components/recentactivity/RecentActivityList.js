@@ -29,6 +29,10 @@ export const RecentActivityList = () => {
         setAllWithdrawalEvents(allWithdrawals)
     }, [deposit_events, withdrawal_events])
 
+    let totalWithdrawals = profile?.withdrawal_events?.reduce((total, event) => total+parseFloat(event.total), 0)
+    let totalDeposits = profile?.deposit_events?.reduce((total, event) => total+parseFloat(event.total), 0)
+    let currentSaved = totalDeposits - totalWithdrawals
+
 
     return (
         <div className="profileList">
@@ -38,6 +42,7 @@ export const RecentActivityList = () => {
             </div>
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
+                <h4>Current Amount Saved : ${currentSaved.toFixed(2)}</h4>
             </div>
             <div className="recentActivity">
                 <h3 className="underline">Your Deposits</h3>

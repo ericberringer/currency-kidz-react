@@ -73,6 +73,8 @@
     padding: 20px 0 10px 0;
     margin: 25px 70px 0 70px;
     background-color: #c7b9fc77;
+    border-left: 2px solid #5940b1;
+    border-right: 2px solid #5940b1;
 }
 
 .quizPiggy {

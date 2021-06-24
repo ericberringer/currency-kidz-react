@@ -28,6 +28,8 @@
     padding: 20px;
     background-color: #c7b9fc77;
     border-radius: 10px;
+    border-left: 2px solid #5940b1;
+    border-right: 2px solid #5940b1;
 }
 
 label {

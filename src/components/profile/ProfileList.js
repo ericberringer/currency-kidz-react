@@ -134,7 +134,7 @@ export const ProfileList = () => {
                     <div className="progressBarDiv">
                         <h2>${currentSaved.toFixed(2)}</h2>
                         <div className="progressBar">
-                            <ProgressBar animated now={45} variant="info" now={percent} label={`${percent}%`} max="100"/>
+                            <ProgressBar className="progress" animated now={45} variant="info" now={percent} label={`${percent}%`} max="100"/>
                         </div>
                         <h2>${saverGoalAmount.toFixed(2)}</h2>
                     </div>      
@@ -145,8 +145,8 @@ export const ProfileList = () => {
                         <Col>
                             <Accordion.Toggle as={Col} variant="link" eventKey="0">
                                 <section className="moneyBreakdownSection">
-                                    <h2 className="totalMoneyTitle">Your Total Money Breakdown</h2>
-                                    <div className="moreButtonDiv">
+                                    <h2 className="totalMoneyTitle">What's In Your Piggy Bank?</h2>
+                                    <div className="moneyBreakdownMoreDiv">
                                         <h7 className="accordionButton down"></h7>
                                         <h7>More</h7>
                                     </div>

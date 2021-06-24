@@ -19,7 +19,9 @@
     border-radius: 10px;
     background-color: #c7b9fc77;
     margin: 15px 30px;
-    padding: 20px 0;
+    padding: 20px 8px;
+    border-left: 2px solid #5940b1;
+    border-right: 2px solid #5940b1;
 }
 
 .progressBarDiv {
@@ -31,6 +33,7 @@
 .progressBar {
     width: 60%;
     margin: 0 25px 8px 25px;
+    padding: 10px 0;
 }
 
 .goalAmountButton {
@@ -56,10 +59,22 @@
     padding: 8px 25px 0 25px;
     margin: 20px 0 0 0;
     border-radius: 10px;
+    border-left: 2px solid #5940b1;
+    border-right: 2px solid #5940b1;
 }
 
 .totalMoneyTitle {
     margin: 5px 0 25px 0;
+}
+
+.moneyBreakdownMoreDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1px 0 6px 0;
+    margin: 0 0 10px 0;
+    cursor: pointer;
 }
 
 .moreButtonDiv {
@@ -86,7 +101,7 @@
 }
 
 .milo {
-    max-width: 30%;
+    max-width: 26%;
     margin: 0 0 30px 0;
     border-top: 6px solid #c7b9fc77;
     border-bottom: 6px solid #c7b9fc77;
