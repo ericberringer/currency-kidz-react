@@ -6,6 +6,16 @@ import { Withdrawal } from "./Withdrawal"
 import PigPlus from "../profile/PigPlus.png"
 import PigMinus from "../profile/PigMinus.png"
 import Milo from "../profile/Milo.png"
+import Penny from "./images/Penny.png"
+import Nickel from "./images/Nickel.png"
+import Dime from "./images/Dime.png"
+import Quarter from "./images/Quarter.png"
+import Dollar from "./images/Dollar.png"
+import Five from "./images/Five.jpeg"
+import Ten from "./images/Ten.jpeg"
+import Twenty from "./images/Twenty.jpeg"
+import Fifty from "./images/Fifty.jpeg"
+import Hundred from "./images/Hundred.jpeg"
 import "./Profile.css"
 import { DepositEventContext } from "../deposits/DepositProvider"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
@@ -15,6 +25,7 @@ import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/Image'
 
 export const ProfileList = () => {
 
@@ -23,7 +34,7 @@ export const ProfileList = () => {
     const { getWithdrawals, withdrawal_events } = useContext(WithdrawalEventContext)
 
     const [ currency, setCurrency ] = useState([])
-    // console.log(currency)
+
     const [ allDepositEvents, setAllDepositEvents ] = useState([])
     const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
     const [ goalAmount, setGoalAmount ] = useState({
@@ -70,6 +81,17 @@ export const ProfileList = () => {
     let totalDeposits = profile?.deposit_events?.reduce((total, event) => total+parseFloat(event.total), 0)
     let currentSaved = totalDeposits - totalWithdrawals
 
+    let totalPennies = currency.reduce((total, event) => total+event.penny, 0)
+    let totalNickels = currency.reduce((total, event) => total+event.nickel, 0)
+    let totalDimes = currency.reduce((total, event) => total+event.dime, 0)
+    let totalQuarters = currency.reduce((total, event) => total+event.quarter, 0)
+    let totalDollars = currency.reduce((total, event) => total+event.one_dollar, 0)
+    let totalFives = currency.reduce((total, event) => total+event.five_dollars, 0)
+    let totalTens = currency.reduce((total, event) => total+event.ten_dollars, 0)
+    let totalTwenties = currency.reduce((total, event) => total+event.twenty_dollars, 0)
+    let totalFifties = currency.reduce((total, event) => total+event.fifty_dollars, 0)
+    let totalHundreds = currency.reduce((total, event) => total+event.one_hundred_dollars, 0)
+
     const saverGoalAmount = parseFloat(profile?.saver?.goal_amount)
     
     let progressMath = (currentSaved / saverGoalAmount) * 100
@@ -110,11 +132,11 @@ export const ProfileList = () => {
                         <h3>You're Goal Progress</h3>
                     </div>
                     <div className="progressBarDiv">
-                        <h2>${currentSaved}</h2>
+                        <h2>${currentSaved.toFixed(2)}</h2>
                         <div className="progressBar">
                             <ProgressBar animated now={45} variant="info" now={percent} label={`${percent}%`} max="100"/>
                         </div>
-                        <h2>${saverGoalAmount}</h2>
+                        <h2>${saverGoalAmount.toFixed(2)}</h2>
                     </div>      
                 </article>
                 }
@@ -122,8 +144,8 @@ export const ProfileList = () => {
                     <Accordion>
                         <Col>
                             <Accordion.Toggle as={Col} variant="link" eventKey="0">
-                                <section>
-                                    <h2>Denomination Breakdown</h2>
+                                <section className="moneyBreakdownSection">
+                                    <h2 className="totalMoneyTitle">Your Total Money Breakdown</h2>
                                     <div className="moreButtonDiv">
                                         <h7 className="accordionButton down"></h7>
                                         <h7>More</h7>
@@ -132,32 +154,92 @@ export const ProfileList = () => {
                             </Accordion.Toggle>
                         </Col>
                         <Accordion.Collapse eventKey="0">
-                            <Card.Body>
-                                <Container>
+                            <Card.Body className="cardBody">
+                                <Container className="denomBreakdown">
                                     <Row>
                                         <Col>
+                                            <div className="denom">
+                                                <Image className="denomImg" alt="coin bill" src={Penny} />
+                                                <div className="denomAmountDiv">
+                                                    <h5 className="denomAmount denomAmountCoins"> = {totalPennies}</h5>
+                                                </div>
+                                            </div>
                                         </Col>
                                         <Col>
+                                            <div className="denom">
+                                                <Image className="denomImg" alt="coin bill" src={Nickel} />
+                                                <div className="denomAmountDiv">
+                                                    <h5 className="denomAmount denomAmountCoins"> = {totalNickels}</h5>
+                                                </div>
+                                            </div>
                                         </Col>
                                         <Col>
+                                            <div className="denom">
+                                                <Image className="denomImg" alt="coin bill" src={Dime} />
+                                                <div className="denomAmountDiv">
+                                                    <h5 className="denomAmount denomAmountCoins"> = {totalDimes}</h5>
+                                                </div>
+                                            </div>
                                         </Col>
                                         <Col>
+                                            <div className="denom">
+                                                <Image className="denomImg" alt="coin bill" src={Quarter} />
+                                                <div className="denomAmountDiv">
+                                                    <h5 className="denomAmount denomAmountCoins"> = {totalQuarters}</h5>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                    <Row className="denomMiddleRow">
+                                        <Col>
+                                            <div className="denom">
+                                                <Image className="denomImg" alt="coin bill" src={Dollar} />
+                                                <div className="denomAmountDiv">
+                                                    <h5 className="denomAmount denomAmountBills"> = {totalDollars}</h5>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                        <Col>
+                                            <div className="denom">
+                                                <Image className="denomImg" alt="coin bill" src={Five} />
+                                                <div className="denomAmountDiv">
+                                                    <h5 className="denomAmount denomAmountBills"> = {totalFives}</h5>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                        <Col>
+                                            <div className="denom">
+                                                <Image className="denomImg" alt="coin bill" src={Ten} />
+                                                <div className="denomAmountDiv">
+                                                    <h5 className="denomAmount denomAmountBills"> = {totalTens}</h5>
+                                                </div>
+                                            </div>
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col>
+                                            <div className="denom">
+                                                <Image className="denomImg" alt="coin bill" src={Twenty} />
+                                                <div className="denomAmountDiv">
+                                                    <h5 className="denomAmount denomAmountBills"> = {totalTwenties}</h5>
+                                                </div>
+                                            </div>
                                         </Col>
                                         <Col>
+                                            <div className="denom">
+                                                <Image className="denomImg" alt="coin bill" src={Fifty} />
+                                                <div className="denomAmountDiv">
+                                                    <h5 className="denomAmount denomAmountBills"> = {totalFifties}</h5>
+                                                </div>
+                                            </div>
                                         </Col>
                                         <Col>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col>
-                                        </Col>
-                                        <Col>
-                                        </Col>
-                                        <Col>
+                                            <div className="denom">
+                                                <Image className="denomImg" alt="coin bill" src={Hundred} />
+                                                <div className="denomAmountDiv">
+                                                    <h5 className="denomAmount denomAmountBills"> = {totalHundreds}</h5>
+                                                </div>
+                                            </div>
                                         </Col>
                                     </Row>
                                 </Container>
