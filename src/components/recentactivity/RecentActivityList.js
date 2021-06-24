@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from "react"
-import { useHistory } from "react-router-dom"
 import { ProfileContext } from "../profile/ProfileProvider"
 import { Deposit } from "../profile/Deposit"
 import { Withdrawal } from "../profile/Withdrawal"
 import Milo from "../profile/Milo.png"
 import { DepositEventContext } from "../deposits/DepositProvider"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
+// import './RecentActivity.css'
 
 export const RecentActivityList = () => {
 
@@ -37,15 +37,15 @@ export const RecentActivityList = () => {
     return (
         <div className="profileList">
             <div className="headerDiv">
-                <h1>All Activities</h1>
-                <h3>Hey {profile.saver?.user.first_name}!! Let's see what you have been up to.</h3>
+                <h1 className="impact">All Activities</h1>
+                <h3 className="impact">Hey {profile.saver?.user.first_name}!! Let's see what you have been up to.</h3>
             </div>
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
-                <h4>Current Amount Saved : ${currentSaved.toFixed(2)}</h4>
+                <h4 className="recActSaved">Current Amount Saved : ${currentSaved.toFixed(2)}</h4>
             </div>
             <div className="recentActivity">
-                <h3 className="underline">Your Deposits</h3>
+                <h3 className="underline impact">Your Deposits</h3>
             </div>
             <div className="recentActivityTitles">
                 <h4 className="underline">Name</h4>
@@ -58,7 +58,7 @@ export const RecentActivityList = () => {
                 }
             </div>
             <div className="recentActivity">
-                <h3 className="underline">Your Withdrawals</h3>
+                <h3 className="underline impact">Your Withdrawals</h3>
             </div>
             <div className="recentActivityTitles withdrawalTitles">
                 <h4 className="underline">Name</h4>

@@ -85,7 +85,7 @@ export const QuizList = () => {
     
     return (
         <section className="quizSection">
-            <h1 className="quizTitle">Let's Put Your Knowledge To The Test!!</h1>
+            <h1 className="quizTitle impact">Let's Put Your Knowledge To The Test!!</h1>
             <form className="quizForm">
                 <fieldset className="question" id="question1">
                     <article className="questionArticle">

@@ -48,9 +48,9 @@ export const LearnList = () => {
                 <div className="imageDiv">
                     <img className="milo image" alt="milo profile" src={Milo}></img>
                 </div>
-                    <h1>Hey {profile.saver?.user.first_name}!!</h1>
-                    <h2>Let's Learn About Our Money</h2>
-                    <h6>Click The Money To Learn More</h6>
+                    <h1 className="impact">Hey {profile.saver?.user.first_name}!!</h1>
+                    <h2 className="impact">Let's Learn About Our Money</h2>
+                    <h6 className="impact">Click The Money To Learn More</h6>
             </article>
             <Container fluid>
                 <article className="learnArticle">
