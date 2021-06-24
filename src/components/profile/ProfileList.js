@@ -103,8 +103,8 @@ export const ProfileList = () => {
     return (
         <div className="profileList">
             <div className="headerDiv">
-                <h1>Currency Kidz</h1>
-                <h3>Welcome {profile.saver?.user.first_name}!!</h3>
+                <h1 className="impact">Currency Kidz</h1>
+                <h3 className="impact">Welcome {profile.saver?.user.first_name}!!</h3>
             </div>
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
@@ -129,12 +129,12 @@ export const ProfileList = () => {
                 :
                 <article className="progressArticle">
                     <div>
-                        <h3>You're Goal Progress</h3>
+                        <h3 className="impact">You're Goal Progress</h3>
                     </div>
                     <div className="progressBarDiv">
                         <h2>${currentSaved.toFixed(2)}</h2>
                         <div className="progressBar">
-                            <ProgressBar animated now={45} variant="info" now={percent} label={`${percent}%`} max="100"/>
+                            <ProgressBar className="progress" animated now={45} variant="info" now={percent} label={`${percent}%`} max="100"/>
                         </div>
                         <h2>${saverGoalAmount.toFixed(2)}</h2>
                     </div>      
@@ -145,8 +145,8 @@ export const ProfileList = () => {
                         <Col>
                             <Accordion.Toggle as={Col} variant="link" eventKey="0">
                                 <section className="moneyBreakdownSection">
-                                    <h2 className="totalMoneyTitle">Your Total Money Breakdown</h2>
-                                    <div className="moreButtonDiv">
+                                    <h2 className="totalMoneyTitle impact">What's In Your Piggy Bank?</h2>
+                                    <div className="moneyBreakdownMoreDiv">
                                         <h7 className="accordionButton down"></h7>
                                         <h7>More</h7>
                                     </div>
@@ -251,13 +251,13 @@ export const ProfileList = () => {
                     onClick={() => history.push("/create/deposit_event")
                         // audio.play()
                 }></img>
-                <h3>Start a New Deposit!!</h3>
+                <h3 className="impact">Start a New Deposit!!</h3>
                 <img className="piggyBank image withdrawalPig" alt="piggy bank withdrawal" src={PigMinus}
                     onClick={() => history.push("/create/withdrawal_event")}></img>
-                <h3>Start a New Withdrawal!!</h3>
+                <h3 className="impact">Start a New Withdrawal!!</h3>
             </div>
             <div className="recentActivity">
-                <h3 className="underline">Your Deposits</h3>
+                <h3 className="underline impact">Your Deposits</h3>
             </div>
             <div className="recentActivityTitles">
                 <h4 className="underline">Name</h4>
@@ -271,7 +271,7 @@ export const ProfileList = () => {
                 }
             </div>
             <div className="recentActivity">
-                <h3 className="underline">Your Withdrawals</h3>
+                <h3 className="underline impact">Your Withdrawals</h3>
             </div>
             <div className="recentActivityTitles withdrawalTitles">
                 <h4 className="underline">Name</h4>

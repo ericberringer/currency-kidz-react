@@ -23,3 +23,12 @@ code {
   border-radius: 10px;
 }
 
+.progress-bar {
+  background-color: #5940b1!important;
+}
+
+.progress {
+  height: 2em;
+  font-size: 1.1em;
+}
+

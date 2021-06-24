@@ -1,21 +1,3 @@
-.transactionForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.transactionFormDiv {
-    margin: 15px 0 0 0;
-}
-
-.cancelButton {
-    margin: 15px 0 0 5px;
-}
-
-.editButton {
-    margin: 0 5px 0 0;
-}
-
-.deleteButton {
-    margin: 0 0 0 5px;
+.recActSaved {
+    background-color: #c7b9fc77;
 }
