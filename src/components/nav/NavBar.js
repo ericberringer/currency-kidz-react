@@ -1,6 +1,6 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
-import CKLogo from "./images/CKLogo.png"
+import NavLogo from "./images/CurrencyKidzNavLogo.png"
 import "./NavBar.css"
 
 export const NavBar = (props) => {
@@ -9,7 +9,7 @@ export const NavBar = (props) => {
 
     return (
         <ul className="navbar">
-            <img className="navLogo" alt="logo" src={CKLogo}></img>
+            <img className="navLogo" alt="logo" src={NavLogo}></img>
             <button className="button" onClick={() => history.push("/")}>Home</button>
             <button className="button" onClick={() => history.push("/learn")}>Learn</button>
             <button className="button" onClick={() => history.push("/recent_activity")}>Transactions</button>

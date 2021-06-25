@@ -16,6 +16,7 @@ import Ten from "./images/Ten.jpeg"
 import Twenty from "./images/Twenty.jpeg"
 import Fifty from "./images/Fifty.jpeg"
 import Hundred from "./images/Hundred.jpeg"
+import Title from "./images/CurrencyKidzLogo.png"
 import "./Profile.css"
 import { DepositEventContext } from "../deposits/DepositProvider"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
@@ -103,7 +104,7 @@ export const ProfileList = () => {
     return (
         <div className="profileList">
             <div className="headerDiv">
-                <h1 className="impact">Currency Kidz</h1>
+                <img className="ckTitle" alt="Currency Kidz Title" src={Title}></img>
                 <h3 className="impact">Welcome {profile.saver?.user.first_name}!!</h3>
             </div>
             <div className="imageDiv">
