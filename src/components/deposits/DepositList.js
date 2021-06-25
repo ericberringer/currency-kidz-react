@@ -143,8 +143,8 @@ export const DepositList = () => {
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile" src={Milo}></img>
             </div>
-                <h1>{profile.saver?.user.first_name} has saved ${currentSaved.toFixed(2)}!!</h1>
-                <h2>How much money would you like to deposit?</h2>
+                <h1 className="impact">{profile.saver?.user.first_name} has saved ${currentSaved.toFixed(2)}!!</h1>
+                <h2 className="impact">How much money would you like to deposit?</h2>
                 <div className="depositHeaderDiv">
                     <div className="depositPiggyDiv">
                         <img className="depositPiggy" src={PiggyBank}></img>

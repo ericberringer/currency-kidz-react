@@ -12,7 +12,7 @@ import Ten from "./images/Ten.jpeg"
 import Twenty from "./images/Twenty.jpeg"
 import Fifty from "./images/Fifty.jpeg"
 import Hundred from "./images/Hundred.jpeg"
-import PiggyBank from "./images/PiggyBank.png"
+import PigMinus from "./images/PigMinus.png"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 import Image from 'react-bootstrap/Image'
 import Carousel from 'react-bootstrap/Carousel'
@@ -134,11 +134,11 @@ export const WithdrawalList = () => {
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile" src={Milo}></img>
             </div>
-                <h1>Hey {profile.saver?.user.first_name}!</h1>
-                <h2>How much money would you like back?</h2>
+                <h1 className="impact">Hey {profile.saver?.user.first_name}!</h1>
+                <h2 className="impact">How much money would you like back?</h2>
                 <div className="depositHeaderDiv">
                     <div className="depositPiggyDiv">
-                        <img className="depositPiggy" src={PiggyBank}></img>
+                        <img className="depositPiggy" src={PigMinus}></img>
                     </div>
                     <div className="currentDepositDiv">
                         <label htmlFor="name" className="nameInputLabel">Name Me: </label>
@@ -152,7 +152,10 @@ export const WithdrawalList = () => {
                         </div>
                     </div>
             </div>
+            <div className="saveCancelButtonDiv">
                 <button className="saveDepositButton button" onClick={saveWithdrawal}>Save Withdrawal</button>
+                <button className="cancelDepositButton button" onClick={() => history.push("/")}>Cancel</button>
+            </div>
             <Carousel className="carousel">
                 <Carousel.Item interval={50000000}>
                         <Image className="currencyImg coinImg" src={Penny} roundedCircle />
