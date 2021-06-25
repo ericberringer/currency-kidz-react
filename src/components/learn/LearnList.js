@@ -1,3 +1,6 @@
+import React, { useContext, useEffect } from "react"
+import { useHistory } from 'react-router-dom'
+import { ProfileContext } from "../profile/ProfileProvider"
 import Quarter from "./images/Quarter.png"
 import Quarter2 from "./images/Quarter2.png"
 import Dime from "./images/Dime.png"
@@ -19,17 +22,14 @@ import Fifty2 from "./images/Fifty2.jpeg"
 import Hundred from "./images/Hundred.jpeg"
 import Hundred2 from "./images/Hundred2.jpeg"
 import PiggyBank from "./images/PiggyBank.png"
-import Image from 'react-bootstrap/Image'
 import Milo from './images/Milo.png'
+import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import './Learn.css'
-import React, { useContext, useEffect } from "react"
-import { useHistory } from 'react-router-dom'
-import { ProfileContext } from "../profile/ProfileProvider"
 
 export const LearnList = () => {
 
@@ -45,12 +45,12 @@ export const LearnList = () => {
         <>
         <section className="learnSection">
             <article className="learnHeader">
+                    <h1 className="impact learnTitle">Hey {profile.saver?.user.first_name}!!</h1>
+                    <h2 className="impact learnTitle2">Let's Learn About Our Money</h2>
                 <div className="imageDiv">
                     <img className="milo image" alt="milo profile" src={Milo}></img>
                 </div>
-                    <h1 className="impact">Hey {profile.saver?.user.first_name}!!</h1>
-                    <h2 className="impact">Let's Learn About Our Money</h2>
-                    <h6 className="impact">Click The Money To Learn More</h6>
+                    <h6 className="impact learnTitle3">Click The Money To Learn More</h6>
             </article>
             <Container fluid>
                 <article className="learnArticle">

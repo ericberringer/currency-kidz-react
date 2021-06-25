@@ -1,3 +1,8 @@
-.recActSaved {
-    background-color: #c7b9fc77;
+.recentTitle {
+    margin: 30px 0;
+    font-size: 3.5em;
+}
+
+.recentUser {
+    margin: 0 0 20px 0;
 }

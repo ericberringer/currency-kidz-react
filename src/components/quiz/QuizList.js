@@ -1,3 +1,5 @@
+import React, { useState } from "react"
+import { useHistory } from 'react-router-dom'
 import QuarterQuestion from "./images/QuarterQuestion.png"
 import Washington from "./images/WashingtonQuestion.png"
 import Lincoln from "./images/AbrahamLincolnQuestion.png"
@@ -10,8 +12,6 @@ import GrantAnswer from "./images/GrantAnswer.png"
 import UncleSam from "./images/UncleSamTry.png"
 import Grant from "./images/Grant.png"
 import './Quiz.css'
-import React, { useState } from "react"
-import { useHistory } from 'react-router-dom'
 
 export const QuizList = () => {
 
