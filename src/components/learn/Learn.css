@@ -2,6 +2,22 @@
     margin: 0 0 60px 0;
 }
 
+.imageDiv {
+    margin: 33px 0;
+}
+
+.learnTitle {
+    font-size: 2.5em;
+}
+
+.learnTitle2 {
+    font-size: 3.5em;
+}
+
+.learnTitle3 {
+    font-size: 1.5em;
+}
+
 .learnRow {
     padding: 20px 20px;
 }
@@ -80,4 +96,5 @@
 .quizPiggy {
     width: 10%;
     margin: 0 0 10px 0;
+    cursor: pointer;
 }

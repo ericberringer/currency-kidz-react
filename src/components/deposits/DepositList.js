@@ -1,8 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import { ProfileContext } from "../profile/ProfileProvider"
-// import { Deposit } from "./Deposit"
-import PigPlus from "../profile/PigPlus.png"
+import { DepositEventContext } from "../deposits/DepositProvider"
 import Milo from "../profile/Milo.png"
 import Quarter from "./images/Quarter.png"
 import Dime from "./images/Dime.png"
@@ -14,12 +13,8 @@ import Ten from "./images/Ten.jpeg"
 import Twenty from "./images/Twenty.jpeg"
 import Fifty from "./images/Fifty.jpeg"
 import Hundred from "./images/Hundred.jpeg"
-import PiggyBank from "./images/PiggyBank.png"
-import { DepositEventContext } from "../deposits/DepositProvider"
+import PigPlus from "./images/PigPlus.png"
 import Image from 'react-bootstrap/Image'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import Carousel from 'react-bootstrap/Carousel'
 import "./Deposit.css"
 
@@ -147,7 +142,7 @@ export const DepositList = () => {
                 <h2 className="impact">How much money would you like to deposit?</h2>
                 <div className="depositHeaderDiv">
                     <div className="depositPiggyDiv">
-                        <img className="depositPiggy" src={PiggyBank}></img>
+                        <img className="depositPiggy" src={PigPlus}></img>
                     </div>
                     <div className="currentDepositDiv">
                         <label htmlFor="name" className="nameInputLabel">Name Me: </label>

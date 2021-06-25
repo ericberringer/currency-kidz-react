@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import { ProfileContext } from "../profile/ProfileProvider"
+import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 import Milo from "../profile/Milo.png"
 import Quarter from "./images/Quarter.png"
 import Dime from "./images/Dime.png"
@@ -13,7 +14,6 @@ import Twenty from "./images/Twenty.jpeg"
 import Fifty from "./images/Fifty.jpeg"
 import Hundred from "./images/Hundred.jpeg"
 import PigMinus from "./images/PigMinus.png"
-import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 import Image from 'react-bootstrap/Image'
 import Carousel from 'react-bootstrap/Carousel'
 

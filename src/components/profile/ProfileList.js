@@ -3,8 +3,10 @@ import { useHistory } from "react-router-dom"
 import { ProfileContext } from "./ProfileProvider"
 import { Deposit } from "./Deposit"
 import { Withdrawal } from "./Withdrawal"
-import PigPlus from "../profile/PigPlus.png"
-import PigMinus from "../profile/PigMinus.png"
+import { DepositEventContext } from "../deposits/DepositProvider"
+import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
+import PigPlus from "./images/PigPlus.png"
+import PigMinus from "./images/PigMinus.png"
 import Milo from "../profile/Milo.png"
 import Penny from "./images/Penny.png"
 import Nickel from "./images/Nickel.png"
@@ -17,9 +19,6 @@ import Twenty from "./images/Twenty.jpeg"
 import Fifty from "./images/Fifty.jpeg"
 import Hundred from "./images/Hundred.jpeg"
 import Title from "./images/CurrencyKidzLogo.png"
-import "./Profile.css"
-import { DepositEventContext } from "../deposits/DepositProvider"
-import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
@@ -27,10 +26,11 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
+import "./Profile.css"
 
 export const ProfileList = () => {
 
-    const { getProfile, profile, updateProfile, getProfileById } = useContext(ProfileContext)
+    const { getProfile, profile, updateProfile } = useContext(ProfileContext)
     const { getDeposits, deposit_events } = useContext(DepositEventContext)
     const { getWithdrawals, withdrawal_events } = useContext(WithdrawalEventContext)
 

@@ -1,5 +1,4 @@
 import React, { useContext } from "react"
-import "./Profile.css"
 import { useHistory } from "react-router-dom"
 import { DepositEventContext } from "../deposits/DepositProvider"
 import Quarter from "./images/Quarter.png"
@@ -18,6 +17,7 @@ import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import "./Profile.css"
 
 export const Deposit = ({deposit}) => {
 
