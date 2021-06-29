@@ -7,7 +7,7 @@ export const WithdrawalProvider = (props) =>{
     const [withdrawal_events, setWithdrawals] = useState([])
 
     const getWithdrawals = () => {
-      return fetch("http://localhost:8000/withdrawal_events", {
+      return fetch("https://currency-kidz.herokuapp.com/withdrawal_events", {
           headers:{
               "Authorization": `Token ${localStorage.getItem("ck_user_id")}`
           }
@@ -17,7 +17,7 @@ export const WithdrawalProvider = (props) =>{
     }
 
     const createWithdrawal = newDep => {
-        return fetch("http://localhost:8000/withdrawal_events", {
+        return fetch("https://currency-kidz.herokuapp.com/withdrawal_events", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const WithdrawalProvider = (props) =>{
     }
 
     const updateWithdrawal = withdrawal => {
-        return fetch(`http://localhost:8000/withdrawal_events/${withdrawal.id}`, {
+        return fetch(`https://currency-kidz.herokuapp.com/withdrawal_events/${withdrawal.id}`, {
             method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("ck_user_id")}`,
@@ -41,7 +41,7 @@ export const WithdrawalProvider = (props) =>{
     }
 
     const getWithdrawalById = (id) => {
-        return fetch(`http://localhost:8000/withdrawal_events/${id}`, {
+        return fetch(`https://currency-kidz.herokuapp.com/withdrawal_events/${id}`, {
             headers:{
                 "Authorization": `Token ${localStorage.getItem("ck_user_id")}`
             }
@@ -50,7 +50,7 @@ export const WithdrawalProvider = (props) =>{
     }
 
     const deleteWithdrawal = (withdrawalId) => {
-        return fetch(`http://localhost:8000/withdrawal_events/${withdrawalId}`, {
+        return fetch(`https://currency-kidz.herokuapp.com/withdrawal_events/${withdrawalId}`, {
             method: "DELETE",
             headers:{
                 "Authorization": `Token ${localStorage.getItem("ck_user_id")}`

@@ -7,7 +7,7 @@ export const DepositProvider = (props) =>{
     const [deposit_events, setDeposits] = useState([])
 
     const getDeposits = () => {
-      return fetch("http://localhost:8000/deposit_events", {
+      return fetch("https://currency-kidz.herokuapp.com/deposit_events", {
           headers:{
               "Authorization": `Token ${localStorage.getItem("ck_user_id")}`
           }
@@ -17,7 +17,7 @@ export const DepositProvider = (props) =>{
     }
 
     const createDeposit = newDep => {
-        return fetch("http://localhost:8000/deposit_events", {
+        return fetch("https://currency-kidz.herokuapp.com/deposit_events", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const DepositProvider = (props) =>{
     }
 
     const updateDeposit = deposit => {
-        return fetch(`http://localhost:8000/deposit_events/${deposit.id}`, {
+        return fetch(`https://currency-kidz.herokuapp.com/deposit_events/${deposit.id}`, {
             method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("ck_user_id")}`,
@@ -41,7 +41,7 @@ export const DepositProvider = (props) =>{
     }
 
     const getDepositById = (id) => {
-        return fetch(`http://localhost:8000/deposit_events/${id}`, {
+        return fetch(`https://currency-kidz.herokuapp.com/deposit_events/${id}`, {
             headers:{
                 "Authorization": `Token ${localStorage.getItem("ck_user_id")}`
             }
@@ -50,7 +50,7 @@ export const DepositProvider = (props) =>{
     }
 
     const deleteDeposit = (depositId) => {
-        return fetch(`http://localhost:8000/deposit_events/${depositId}`, {
+        return fetch(`https://currency-kidz.herokuapp.com/deposit_events/${depositId}`, {
             method: "DELETE",
             headers:{
                 "Authorization": `Token ${localStorage.getItem("ck_user_id")}`
