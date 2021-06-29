@@ -14,7 +14,7 @@ export const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault()
 
-        return fetch("http://localhost:8000/login", {
+        return fetch("https://currency-kidz.herokuapp.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
