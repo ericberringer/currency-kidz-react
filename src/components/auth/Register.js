@@ -28,7 +28,7 @@ export const Register = (props) => {
                 "created_on": created_on.current.value
             }
 
-            return fetch("http://localhost:8000/register", {
+            return fetch("https://currency-kidz.herokuapp.com/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
