@@ -24,6 +24,7 @@ export const ProfileProvider = (props) =>{
         })
         .then(res => res.json())
     }
+    
 
     const updateProfile = saver => {
         return fetch(`http://localhost:8000/profile/${saver.id}`, {
