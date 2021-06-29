@@ -7,7 +7,7 @@ export const ProfileProvider = (props) =>{
     const [profile, setProfile] = useState([])
 
     const getProfile = () => {
-      return fetch("http://localhost:8000/profile", {
+      return fetch("https://currency-kidz.herokuapp.com/profile", {
           headers:{
               "Authorization": `Token ${localStorage.getItem("ck_user_id")}`
           }
@@ -17,7 +17,7 @@ export const ProfileProvider = (props) =>{
     }
 
     const getProfileById = (saverId) => {
-        return fetch(`http://localhost:8000/profile/${saverId}`, {
+        return fetch(`https://currency-kidz.herokuapp.com/profile/${saverId}`, {
             headers:{
                 "Authorization": `Token ${localStorage.getItem("ck_user_token")}`
             }
@@ -27,7 +27,7 @@ export const ProfileProvider = (props) =>{
     
 
     const updateProfile = saver => {
-        return fetch(`http://localhost:8000/profile/${saver.id}`, {
+        return fetch(`https://currency-kidz.herokuapp.com/profile/${saver.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
