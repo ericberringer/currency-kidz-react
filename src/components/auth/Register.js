@@ -24,8 +24,8 @@ export const Register = (props) => {
                 "last_name": lastName.current.value,
                 "email": email.current.value,
                 "password": password.current.value,
-                "profile_image_url": profile_image_url.current.value,
-                "created_on": created_on.current.value
+                "profile_image_url": "",
+                "created_on": ""
             }
 
             return fetch("http://localhost:8000/register", {

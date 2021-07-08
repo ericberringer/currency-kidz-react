@@ -48,11 +48,11 @@ export const Login = () => {
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
-                        <input ref={email} type="email" id="email" className="form-control"  placeholder="Email address" required autoFocus />
+                        <input ref={email} type="text" value="milo@bud.com" id="email" className="form-control"  placeholder="Email address" required autoFocus readOnly />
                     </fieldset>
                     <fieldset>
                         <label htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password" id="password" className="form-control"  placeholder="Password" required />
+                        <input ref={password} type="password" value="me" id="password" className="form-control"  placeholder="Password" required readOnly />
                     </fieldset>
                     <fieldset style={{
                         textAlign:"center"
