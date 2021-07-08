@@ -53,7 +53,7 @@ export const Login = () => {
                     </fieldset>
                     <fieldset>
                         <label htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password" value="me" id="password" className="form-control"  placeholder="Password" required readOnly />
+                        <input ref={password} type="password" value="currency!16!@87" id="password" className="form-control"  placeholder="Password" required readOnly />
                     </fieldset>
                     <fieldset style={{
                         textAlign:"center"
