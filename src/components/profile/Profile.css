@@ -48,6 +48,29 @@
     margin: 25px 0 0 0;
 }
 
+.goalResetButton {
+    margin: 10px 0 10px 0;
+}
+
+.congratsDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.congratsPiggyBank {
+    width: 35%;
+    margin: 10px 0;
+}
+
+.editGoalDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
 .cardBody {
     border-left: 3px solid #c7b9fc77;
     border-right: 3px solid #c7b9fc77;
