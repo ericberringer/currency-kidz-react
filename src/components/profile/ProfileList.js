@@ -40,7 +40,7 @@ export const ProfileList = () => {
     const [ allDepositEvents, setAllDepositEvents ] = useState([])
     const [ allWithdrawalEvents, setAllWithdrawalEvents ] = useState([])
     const [ goalAmount, setGoalAmount ] = useState({
-        amount: 0
+        amount: 0.00
     })
     // console.log("goal Amount" + goalAmount.amount)
     
@@ -98,7 +98,6 @@ export const ProfileList = () => {
     
     let progressMath = (currentSaved / saverGoalAmount) * 100
     let percent = parseFloat(progressMath.toFixed(2))
-    // console.log(percent)
 
     const resetGoal = () => {
         updateProfile({
@@ -106,11 +105,11 @@ export const ProfileList = () => {
             user: profile.saver.user,
             profile_image_url: profile.saver.profile_image_url,
             created_on: profile.saver.created_on,
-            goal_amount: 0
+            goal_amount: 0.00
         })
     }
 
-
+    if (Number.isNaN(saverGoalAmount) && Number.isNaN(currentSaved) && Number.isNaN(percent)) return null
 
     return (
         <div className="profileList">
@@ -120,7 +119,7 @@ export const ProfileList = () => {
             </div>
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
-                {saverGoalAmount === 0 ?
+                {saverGoalAmount === 0.00 ?
                 <>
                 <div className="goalAmountDiv">
                     <form className="goalAmountForm">
@@ -165,8 +164,8 @@ export const ProfileList = () => {
                                 <section>
                                     <h2 className="totalMoneyTitle impact">Edit Goal Amount</h2>
                                     <div className="editGoalDiv">
-                                        <h7 className="accordionButton down"></h7>
-                                        <h7>More</h7>
+                                        <h6 className="accordionButton down"></h6>
+                                        <h6>More</h6>
                                     </div>
                                 </section>
                             </Accordion.Toggle>
