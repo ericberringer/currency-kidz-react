@@ -12,6 +12,7 @@ export const NavBar = (props) => {
             <img className="navLogo" alt="logo" src={NavLogo}></img>
             <button className="button" onClick={() => history.push("/")}>Home</button>
             <button className="button" onClick={() => history.push("/learn")}>Learn</button>
+            <button className="button" onClick={() => history.push("/quiz")}>Quiz</button>
             <button className="button" onClick={() => history.push("/recent_activity")}>Transactions</button>
             <button className="navbar__item button"
                     onClick={() => {

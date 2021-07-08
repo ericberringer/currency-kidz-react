@@ -7,6 +7,7 @@ import { DepositEventContext } from "../deposits/DepositProvider"
 import { WithdrawalEventContext } from "../withdrawals/WithdrawalProvider"
 import PigPlus from "./images/PigPlus.png"
 import PigMinus from "./images/PigMinus.png"
+import PigCongrats from "./images/PigCongrats.png"
 import Milo from "../profile/Milo.png"
 import Penny from "./images/Penny.png"
 import Nickel from "./images/Nickel.png"
@@ -99,6 +100,16 @@ export const ProfileList = () => {
     let percent = parseFloat(progressMath.toFixed(2))
     // console.log(percent)
 
+    const resetGoal = () => {
+        updateProfile({
+            id: profile.saver.id,
+            user: profile.saver.user,
+            profile_image_url: profile.saver.profile_image_url,
+            created_on: profile.saver.created_on,
+            goal_amount: 0
+        })
+    }
+
 
 
     return (
@@ -138,13 +149,57 @@ export const ProfileList = () => {
                             <ProgressBar className="progress" animated now={45} variant="info" now={percent} label={`${percent}%`} max="100"/>
                         </div>
                         <h2>${saverGoalAmount.toFixed(2)}</h2>
-                    </div>      
+                    </div>    
+                    <div>
+                        { currentSaved >= saverGoalAmount.toFixed(2) ?
+                        <div className="congratsDiv">
+                            <img className="congratsPiggyBank" alt="congrats" src={PigCongrats}></img>
+                            <div>
+                                <button className="button2 goalResetButton" onClick={resetGoal} name="amount">Reset Goal</button>
+                            </div>
+                        </div>
+                        :
+                    <Accordion>
+                        <Col>
+                            <Accordion.Toggle as={Col} variant="link" eventKey="0">
+                                <section>
+                                    <h2 className="totalMoneyTitle impact">Edit Goal Amount</h2>
+                                    <div className="editGoalDiv">
+                                        <h7 className="accordionButton down"></h7>
+                                        <h7>More</h7>
+                                    </div>
+                                </section>
+                            </Accordion.Toggle>
+                        </Col>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body className="cardBody">
+                                <Row>
+                                    <Col>
+                                        <form>
+                                            <fieldset>
+                                                <label htmlFor="goalEditInput" className="goalLabel">Change Goal Amount: </label>
+                                                <input id="goalEditInput" type="number"
+                                                    name="amount" placeholder="0.00"
+                                                    required autoFocus
+                                                    onChange={handleControlledInputChange}></input>
+                                            </fieldset>
+                                        </form>
+                                        <div>
+                                            <button className="button2 goalAmountButton" onClick={handleSaveGoalAmount}>Set Goal</button>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Accordion>
+                    }
+                    </div>
                 </article>
                 }
                 <div>
                     <Accordion>
                         <Col>
-                            <Accordion.Toggle as={Col} variant="link" eventKey="0">
+                            <Accordion.Toggle as={Col} variant="link" eventKey="1">
                                 <section className="moneyBreakdownSection">
                                     <h2 className="totalMoneyTitle impact">What's In Your Piggy Bank?</h2>
                                     <div className="moneyBreakdownMoreDiv">
@@ -154,7 +209,7 @@ export const ProfileList = () => {
                                 </section>
                             </Accordion.Toggle>
                         </Col>
-                        <Accordion.Collapse eventKey="0">
+                        <Accordion.Collapse eventKey="1">
                             <Card.Body className="cardBody">
                                 <Container className="denomBreakdown">
                                     <Row>

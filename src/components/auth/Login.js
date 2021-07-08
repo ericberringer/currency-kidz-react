@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom"
+import NavLogo from "./images/CurrencyKidzNavLogo.png"
 import "./Auth.css"
 
 
@@ -42,9 +43,9 @@ export const Login = () => {
                 <div>Email or password was not valid.</div>
                 <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
             </dialog>
-            <section>
+            <section className="loginFormSection">
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Currency Kidz</h1>
+                    <img className="loginLogo" alt="logo" src={NavLogo}></img>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
@@ -57,13 +58,13 @@ export const Login = () => {
                     <fieldset style={{
                         textAlign:"center"
                     }}>
-                        <button className="btn btn-1 btn-sep icon-send" type="submit">Sign In</button>
+                        <button className="button loginButton" type="submit">Sign In</button>
                     </fieldset>
                 </form>
             </section>
-            <section className="link--register">
+            {/* <section className="link--register">
                 <Link to="/register">Not a member yet?</Link>
-            </section>
+            </section> */}
         </main>
     )
 }
