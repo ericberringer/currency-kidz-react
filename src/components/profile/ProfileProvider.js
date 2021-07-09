@@ -27,6 +27,7 @@ export const ProfileProvider = (props) =>{
     
 
     const updateProfile = saver => {
+        console.table(saver)
         return fetch(`https://currency-kidz.herokuapp.com/profile/${saver.id}`, {
           method: "PUT",
           headers: {

@@ -50,7 +50,7 @@ export const ProfileList = () => {
         updateProfile({
             id: profile.saver.id,
             user: profile.saver.user,
-            profile_image_url: profile.saver.profile_image_url,
+            // profile_image_url: profile.saver.profile_image_url,
             created_on: profile.saver.created_on,
             goal_amount: parseFloat(goalAmount.amount)
         })
