@@ -150,7 +150,7 @@ export const ProfileList = () => {
                         <h2>${saverGoalAmount.toFixed(2)}</h2>
                     </div>    
                     <div>
-                        { currentSaved >= saverGoalAmount.toFixed(2) ?
+                        { currentSaved > (saverGoalAmount.toFixed(2) - 0.01) ?
                         <div className="congratsDiv">
                             <img className="congratsPiggyBank" alt="congrats" src={PigCongrats}></img>
                             <div>
