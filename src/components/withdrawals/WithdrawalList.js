@@ -21,6 +21,7 @@ export const WithdrawalList = () => {
 
     const { getProfile, profile } = useContext(ProfileContext)
     const { createWithdrawal } = useContext(WithdrawalEventContext)
+
     const [ newWithdrawal, setNewWithdrawal ] = useState({
         name: "",
         date: "",
@@ -102,21 +103,30 @@ export const WithdrawalList = () => {
         }
     }
 
+
     const handleInputChange = (event) => {
-        const addName = { ...newWithdrawal }
-        addName[event.target.id] = event.target.value
-        setNewWithdrawal(addName)
+            const addName = { ...newWithdrawal }
+            addName[event.target.id] = event.target.value
+            setNewWithdrawal(addName)
     }
 
+    let totalDeposits = profile?.deposit_events?.reduce((total, event) => total+parseFloat(event.total), 0)
+    console.log(parseFloat(totalDeposits.toFixed(2)))
+    console.log(total)
+
     const saveWithdrawal = () => {
-        createWithdrawal({
-            name: newWithdrawal.name,
-            date: newWithdrawal.date,
-            total: total,
-            sound_effect: newWithdrawal.sound_effect,
-            currencyCount: currencyCount
-        })
-        .then(() => history.push("/"))
+        if (total > totalDeposits){
+            window.alert("The withdrawal cannot excede the current amount in the piggy bank.")
+        } else {
+            createWithdrawal({
+                name: newWithdrawal.name,
+                date: newWithdrawal.date,
+                total: total,
+                sound_effect: newWithdrawal.sound_effect,
+                currencyCount: currencyCount
+            })
+            .then(() => history.push("/"))
+        }
     }
 
     useEffect(() => {
