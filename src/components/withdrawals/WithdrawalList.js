@@ -143,7 +143,7 @@ export const WithdrawalList = () => {
                 <img className="milo image" alt="milo profile" src={Milo}></img>
             </div>
                 <h1 className="impact">Hey {profile.saver?.user.first_name}!</h1>
-                <h3 className="impact">You currenty have ${totalDeposits}!</h3>
+                <h3 className="impact currentDepositTitle2">You currenty have ${parseFloat(totalDeposits.toFixed(2))}!</h3>
                 <h2 className="impact">How much money would you like back?</h2>
                 <div className="depositHeaderDiv">
                     <div className="depositPiggyDiv">
