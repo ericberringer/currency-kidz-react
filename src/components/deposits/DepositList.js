@@ -139,7 +139,7 @@ export const DepositList = () => {
                 <img className="milo image" alt="milo profile" src={Milo}></img>
             </div>
                 <h1 className="impact">{profile.saver?.user.first_name} has saved ${currentSaved.toFixed(2)}!!</h1>
-                <h2 className="impact">How much money would you like to deposit?</h2>
+                <h2 className="impact">Select money in the carousel below to add to your deposit.</h2>
                 <div className="depositHeaderDiv">
                     <div className="depositPiggyDiv">
                         <img className="depositPiggy" src={PigPlus}></img>
@@ -160,9 +160,6 @@ export const DepositList = () => {
             <div className="saveCancelButtonDiv">
                 <button className="saveDepositButton button" onClick={saveDeposit}>Save Deposit</button>
                 <button className="cancelDepositButton button" onClick={() => history.push("/")}>Cancel</button>
-            </div>
-            <div>
-                <h3 className="impact currentDepositTitle3">Select how many coins or bills you would like to add.</h3>
             </div>
             <Carousel className="carousel">
                 <Carousel.Item interval={50000000}>

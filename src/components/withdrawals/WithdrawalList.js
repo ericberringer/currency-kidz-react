@@ -144,7 +144,7 @@ export const WithdrawalList = () => {
             </div>
                 <h1 className="impact">Hey {profile.saver?.user.first_name}!</h1>
                 <h3 className="impact currentDepositTitle2">You currenty have ${parseFloat(totalDeposits.toFixed(2))}!</h3>
-                <h2 className="impact">How much money would you like back?</h2>
+                <h2 className="impact">Select money in the carousel below to add to your withdrawal.</h2>
                 <div className="depositHeaderDiv">
                     <div className="depositPiggyDiv">
                         <img className="depositPiggy" src={PigMinus}></img>
@@ -164,9 +164,6 @@ export const WithdrawalList = () => {
             <div className="saveCancelButtonDiv">
                 <button className="saveDepositButton button" onClick={saveWithdrawal}>Save Withdrawal</button>
                 <button className="cancelDepositButton button" onClick={() => history.push("/")}>Cancel</button>
-            </div>
-            <div>
-                <h3 className="impact currentDepositTitle3">Select how many coins or bills you would like to add.</h3>
             </div>
             <Carousel className="carousel">
                 <Carousel.Item interval={50000000}>
