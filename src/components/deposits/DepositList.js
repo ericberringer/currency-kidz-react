@@ -161,6 +161,9 @@ export const DepositList = () => {
                 <button className="saveDepositButton button" onClick={saveDeposit}>Save Deposit</button>
                 <button className="cancelDepositButton button" onClick={() => history.push("/")}>Cancel</button>
             </div>
+            <div>
+                <h3 className="impact currentDepositTitle3">Select how many coins or bills you would like to add.</h3>
+            </div>
             <Carousel className="carousel">
                 <Carousel.Item interval={50000000}>
                         <Image className="currencyImg coinImg" src={Penny} roundedCircle />
