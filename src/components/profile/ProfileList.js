@@ -140,7 +140,7 @@ export const ProfileList = () => {
                 :
                 <article className="progressArticle">
                     <div>
-                        <h3 className="impact">You're Goal Progress</h3>
+                        <h3 className="impact">Your Goal Progress</h3>
                     </div>
                     <div className="progressBarDiv">
                         <h2>${currentSaved.toFixed(2)}</h2>
