@@ -42,7 +42,7 @@ export const RecentActivityList = () => {
             </div>
             <div className="imageDiv">
                 <img className="milo image" alt="milo profile picture" src={Milo}></img>
-                <h4 className="recActSaved">You're Piggy Bank Loot : ${currentSaved.toFixed(2)}</h4>
+                <h4 className="recActSaved">Your Piggy Bank Loot : ${currentSaved.toFixed(2)}</h4>
             </div>
             <div className="recentActivity">
                 <h3 className="underline impact">Your Deposits</h3>
